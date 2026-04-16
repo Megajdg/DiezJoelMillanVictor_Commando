@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 #include "Transform.h"
+#include "SDL3/SDL.h"
 
 struct bColor
 {
@@ -59,6 +60,8 @@ public:
 	bool MustWindowClose();
 
 	void DrawSprite(std::string img_name, Transform transform, Vector2 size);
+
+	void DrawSprite(std::string img_name, Transform transform, Vector2 size, SDL_FRect* srcRect);
 
 	void DrawFrame();
 

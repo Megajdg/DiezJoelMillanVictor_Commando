@@ -171,7 +171,7 @@ void MyPhysics::RemoveActor(Actor* act)
 			delete collider;
 		delete it->second;
 
-		colliders_by_actor.erase(it);
+		colliders_by_actor.erase(it);	
 	}
 }
 
@@ -188,5 +188,4 @@ void MyPhysics::AddCollider(Collider* col, Actor* act)
 	{
 		it->second->push_back(col);
 	}
-
 }

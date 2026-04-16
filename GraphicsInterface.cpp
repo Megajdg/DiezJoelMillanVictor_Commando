@@ -204,6 +204,18 @@ void GraphicsInterface::DrawSprite(std::string img_name, Transform transform, Ve
 		SDL_FlipMode::SDL_FLIP_NONE);
 
 }
+
+void GraphicsInterface::DrawSprite(std::string img_name, Transform transform, Vector2 size, SDL_FRect* srcRect)
+{
+	SDL_FRect rect;
+	rect.w = size.x * transform.scale.x;
+	rect.h = size.y * transform.scale.y;
+	rect.x = transform.position.x - rect.w * 0.5f - Game::camera.position.x + Parameters::screenWidth * 0.5f;
+	rect.y = transform.position.y - rect.h * 0.5f - Game::camera.position.y + Parameters::screenHeight * 0.5f;
+
+	SDL_RenderTexture(renderer, image_collection[img_name], srcRect, &rect);
+}
+
 void GraphicsInterface::ClearScreen(unsigned char r, unsigned char g, unsigned char b)
 {
 	SDL_SetRenderDrawColor(renderer, r, g, b, 255); // Negro
