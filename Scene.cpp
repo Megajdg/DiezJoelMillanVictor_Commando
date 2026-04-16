@@ -15,6 +15,7 @@ Scene::Scene(GraphicsInterface* GI, MyPhysics * mph)
 	backgroundColor.b = backgroundColor.g = backgroundColor.r = 0;
 	this->GI = GI;
 	this->mph = mph;
+	GI->LoadImage("player_spritesheet.png");
 
 #ifdef DEBUG_COLLIDERS
 	GI->LoadImage("circle_PNG256_256.png");

@@ -18,10 +18,10 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
     actors.push_back(bg);
 
     // Player
-    GI->LoadImage("Joe.png");
+    GI->LoadImage("player_spritesheet.png");
     Transform t;
     t.position = Vector2(500, 350);
-    player = new Player(this, "Joe.png", t, 100);
+    player = new Player(this, "player_spritesheet.png", t, 100);
     actors.push_back(player);
 
     CircleCollider* col = new CircleCollider();

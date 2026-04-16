@@ -1,228 +1,157 @@
-﻿  Actor.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Actor.cpp")
-  
-  Bullet.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Bullet.cpp")
-  
-  Camera.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Camera.cpp")
-  
-  CircleCollider.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "CircleCollider.cpp")
-  
-  Collider.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Collider.cpp")
-  
-  CreditsScene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "CreditsScene.cpp")
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "CreditsScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
-      vea la declaración de 'SDL_Window'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "CreditsScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
-      vea la declaración de 'SDL_Renderer'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(27,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "CreditsScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(31,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "CreditsScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-  DiezJoelMillanVictor_Commando.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "DiezJoelMillanVictor_Commando.cpp")
-  
-  Game.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Game.cpp")
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "Game.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8):
-      vea la declaración de 'SDL_Window'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "Game.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8):
-      vea la declaración de 'SDL_Renderer'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "Game.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Game.cpp(104,22): warning C4244: 'inicializando': conversión de 'Uint64' a 'unsigned int'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Game.cpp(117,24): warning C4244: '=': conversión de 'Uint64' a 'unsigned int'; posible pérdida de datos
-  GameScene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  GameScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "GameScene.cpp")
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
   (compilando archivo de origen "GameScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
       vea la declaración de 'SDL_Window'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(26,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
   (compilando archivo de origen "GameScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
       vea la declaración de 'SDL_Renderer'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(27,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(28,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
   (compilando archivo de origen "GameScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(31,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(32,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
   (compilando archivo de origen "GameScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-  GraphicsInterface.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "GraphicsInterface.cpp")
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "GraphicsInterface.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8):
-      vea la declaración de 'SDL_Window'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "GraphicsInterface.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8):
-      vea la declaración de 'SDL_Renderer'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "GraphicsInterface.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3_ttf-3.2.2\include\SDL3_ttf\SDL_ttf.h(113,16): warning C4099: 'TTF_Font': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  (compilando archivo de origen "GraphicsInterface.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(35,8):
-      vea la declaración de 'TTF_Font'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(59,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(62,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(65,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(68,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(73,24): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(73,24): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(73,27): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(73,27): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(90,16): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
-  GunWeapon.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "GunWeapon.cpp")
-  
-  HelpScene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "HelpScene.cpp")
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "HelpScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
-      vea la declaración de 'SDL_Window'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "HelpScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
-      vea la declaración de 'SDL_Renderer'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(27,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "HelpScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
-      vea la declaración de 'SDL_Texture'
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(31,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "HelpScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
   IntroScene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "IntroScene.cpp")
   
-  MenuScene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "MenuScene.cpp")
-  
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(24,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "MenuScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "IntroScene.cpp")
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
       vea la declaración de 'SDL_Window'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(25,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "MenuScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(26,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "IntroScene.cpp")
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
       vea la declaración de 'SDL_Renderer'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(27,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "MenuScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(28,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "IntroScene.cpp")
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\GraphicsInterface.h(31,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "MenuScene.cpp")
-      C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.h(32,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "IntroScene.cpp")
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
-  
-  MyPhysics.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "MyPhysics.cpp")
-  
-  Parameters.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Parameters.cpp")
   
   Player.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "Player.cpp")
   
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Player.cpp(34,16): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Player.cpp(35,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-  RectangleCollider.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "RectangleCollider.cpp")
-  
-  Scene.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Scene.cpp")
-  
-  Sprite.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Sprite.cpp")
-  
   Generando código...
-  Compilando...
-  Transform.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Transform.cpp")
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,24): error C2679: '[' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'Animation *' (o bien no existe una conversión aceptable)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\map(345,18):
+      puede ser 'Animation *&std::map<std::string,Animation *,std::less<std::string>,std::allocator<std::pair<const std::string,Animation *>>>::operator [](const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)'
+          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,24):
+          'Animation *&std::map<std::string,Animation *,std::less<std::string>,std::allocator<std::pair<const std::string,Animation *>>>::operator [](const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)': el argumento 2 no puede convertirse de 'Animation *' a 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+              C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+              Razón: no se puede realizar la conversión de 'Animation *' a 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+              C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+              'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(768,5):
+                  puede ser 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )'
+          with
+          [
+              _Elem=char
+          ]
+                      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                      'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )': el argumento 1 no puede convertirse de 'Animation *' a 'const _Elem *const '
+          with
+          [
+              _Elem=char
+          ]
+                          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                          Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(1340,5):
+                  o       'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)'
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+                      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                      'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)': el argumento 1 no puede convertirse de 'Animation *' a 'std::initializer_list<_Elem>'
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+          and
+          [
+              _Elem=char
+          ]
+                          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                          La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(798,5):
+                  o       'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(_Iter,_Iter,const _Alloc &)'
+          with
+          [
+              _Alloc=std::allocator<char>
+          ]
+                  C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                  al hacer coincidir la lista de argumentos '(Animation *)'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\map(174,18):
+      o       'Animation *&std::map<std::string,Animation *,std::less<std::string>,std::allocator<std::pair<const std::string,Animation *>>>::operator [](std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&)'
+          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,24):
+          'Animation *&std::map<std::string,Animation *,std::less<std::string>,std::allocator<std::pair<const std::string,Animation *>>>::operator [](std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&)': el argumento 2 no puede convertirse de 'Animation *' a 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&'
+              C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+              Razón: no se puede realizar la conversión de 'Animation *' a 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+              C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+              'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(768,5):
+                  puede ser 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )'
+          with
+          [
+              _Elem=char
+          ]
+                      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                      'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )': el argumento 1 no puede convertirse de 'Animation *' a 'const _Elem *const '
+          with
+          [
+              _Elem=char
+          ]
+                          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                          Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(1340,5):
+                  o       'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)'
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+                      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                      'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)': el argumento 1 no puede convertirse de 'Animation *' a 'std::initializer_list<_Elem>'
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+          and
+          [
+              _Elem=char
+          ]
+                          C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                          La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(798,5):
+                  o       'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(_Iter,_Iter,const _Alloc &)'
+          with
+          [
+              _Alloc=std::allocator<char>
+          ]
+                  C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,35):
+                  al hacer coincidir la lista de argumentos '(Animation *)'
+      C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(432,24):
+      al hacer coincidir la lista de argumentos '(std::map<std::string,Animation *,std::less<std::string>,std::allocator<std::pair<const std::string,Animation *>>>, Animation *)'
   
-  Vector2.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Vector2.cpp")
-  
-  Weapon.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Weapon.cpp")
-  
-  Widget.cpp
-C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Widget.cpp")
-  
-  Generando código...
-  FreedomForArias.vcxproj -> C:\Users\joeld\OneDrive\Escritorio\ProyectosSDL\DiezJoelMillanVictor_Commando\x64\Debug\DiezJoelMillanVictor_Commando.exe

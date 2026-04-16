@@ -1,0 +1,104 @@
+﻿  Actor.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Actor.cpp")
+  
+  Bullet.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Bullet.cpp")
+  
+  Camera.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Camera.cpp")
+  
+  CircleCollider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "CircleCollider.cpp")
+  
+  Collider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Collider.cpp")
+  
+  CreditsScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "CreditsScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\CreditsScene.cpp(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  DiezJoelMillanVictor_Commando.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "DiezJoelMillanVictor_Commando.cpp")
+  
+  Game.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Game.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Game.cpp(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  GameScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GameScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GameScene.cpp(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  GraphicsInterface.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GraphicsInterface.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\GraphicsInterface.cpp(3,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  GunWeapon.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GunWeapon.cpp")
+  
+  HelpScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HelpScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\HelpScene.cpp(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  IntroScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "IntroScene.cpp")
+  
+  MenuScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "MenuScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\MenuScene.cpp(3,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  MyPhysics.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "MyPhysics.cpp")
+  
+  Parameters.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Parameters.cpp")
+  
+  Player.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Player.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Player.cpp(3,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  RectangleCollider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "RectangleCollider.cpp")
+  
+  Scene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Scene.cpp")
+  
+  Sprite.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Sprite.cpp")
+  
+  Compilando...
+  Transform.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Transform.cpp")
+  
+  Vector2.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Vector2.cpp")
+  
+  Weapon.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Weapon.cpp")
+  
+  Widget.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Widget.cpp")
+  

@@ -13,9 +13,11 @@ public:
 private:
 
 	void UpdateMovement(float deltaTime);
-
+	std::string lastMoveAnim = "run_front";
 	float linear_speed = 300.f;
 	float ang_speed = 100.f;
 	Weapon* weapon = nullptr;
+	bool isThrowing = false;
+	bool isDead = false;
 };
 
