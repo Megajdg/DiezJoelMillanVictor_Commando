@@ -3,7 +3,6 @@
 
 struct Parameters
 {
-
 	//Display params
 	static const char* window_title;
 	static const int width;
@@ -13,5 +12,7 @@ struct Parameters
 	static const float bigFontSize;
 	static const float mediumFontSize;
 	static const float smallFontSize;
+	static int screenWidth;
+	static int screenHeight;
 };
 

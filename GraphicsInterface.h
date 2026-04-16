@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include <string>
 #include <map>
 #include "Transform.h"
 
@@ -19,6 +21,14 @@ enum class EFONT_SIZE
 	SMALL, MEDIUM, BIG
 };
 
+struct MapInfo
+{
+	int realWidth;
+	int realHeight;
+	float scaleX;
+	float scaleY;
+};
+
 class GraphicsInterface
 {
 	class SDL_Window* window;
@@ -32,8 +42,9 @@ class GraphicsInterface
 		float width, height;
 	};
 	std::map<char, Glyph*> glyphs;
+	std::map<char, Glyph*> grenadeGlyphs;
 	class TTF_Font* font = NULL;
-
+	class TTF_Font* grenadeFont = NULL;
 
 	void InitFontAndGlyphs();
 	void DestroyFontAndGlyphs();
@@ -51,8 +62,15 @@ public:
 
 	void DrawFrame();
 
+	void DrawRectScreen(float x, float y, float w, float h, unsigned char r, unsigned char g, unsigned char b);
+
 	void ClearScreen(unsigned char r, unsigned char g, unsigned char b);
 
+	std::vector<uint8_t> LoadCollisionMask(const std::string& path, int& width, int& height);
+
+	MapInfo GetMapInfo(const std::string& path, float renderedWidth, float renderedHeight);
+
 	int PrintText(std::string text, int x, int y, bColor color, EFONT_SIZE fontsize);
+	int PrintText(std::string text, int x, int y, bColor color, EFONT_SIZE fontsize, bool grenade);
 };
 

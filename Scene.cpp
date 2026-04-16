@@ -49,11 +49,11 @@ void Scene::Render()
 {
 	GI->ClearScreen(backgroundColor.r, backgroundColor.g, backgroundColor.b);
 
-	for (Actor* actor : actors)
-	{
-		actor->Render();
-	}
+	for (size_t i = 0; i < actors.size(); ++i)
+		actors[i]->Render();
 
+	for (size_t i = 0; i < ui.size(); ++i)
+		ui[i]->Render();
 
 #ifdef DEBUG_COLLIDERS
 
@@ -86,11 +86,33 @@ void Scene::Render()
 
 void Scene::AddActor(Actor* a)
 {
+	if (std::find(actors.begin(), actors.end(), a) != actors.end())
+	{
+		std::cout << "WARNING: AddActor duplicado: " << a << "\n";
+		return;
+	}
+
 	actors.push_back(a);
+}
+
+void Scene::AddUI(Actor* a)
+{
+	if (std::find(ui.begin(), ui.end(), a) != ui.end())
+	{
+		std::cout << "WARNING: AddUI duplicado: " << a << "\n";
+		return;
+	}
+
+	ui.push_back(a);
 }
 
 void Scene::DestroyActor(Actor* act)
 {
+	if (!act) return;
+
+	if (std::find(actors_to_destroy.begin(), actors_to_destroy.end(), act) != actors_to_destroy.end())
+		return;
+
 	actors_to_destroy.push_back(act);
 }
 

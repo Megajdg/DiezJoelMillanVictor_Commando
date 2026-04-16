@@ -6,11 +6,19 @@
 #include <Windows.h>
 #include "IntroScene.h"
 #include "MenuScene.h"
+#include "GameScene.h"
+#include <fstream>
+#include "GameOverScene.h"
 
 Game* Game::instance = 0;
 std::map<int, bool> Game::keyDown;
 float Game::DeltaTime = 0.0f;
 Camera Game::camera(Vector2(0.f));
+bool Game::pendingRespawn = false;
+int Game::pendingLives = 0;
+int Game::pendingGrenades = 0;
+bool Game::pendingGameOver = false;
+int Game::currentScore = 0;
 
 void Game::Create()
 {
@@ -44,6 +52,20 @@ void Game::ChangeScene(Scene* newScene)
 
 	if (!newScene)
 		instance->game_end = true;
+}
+
+void Game::OnPlayerDeath(Player* p)
+{
+	pendingRespawn = true;
+	pendingLives = p->lives;
+	pendingGrenades = p->grenades;
+	GameScene* gs = (GameScene*)instance->currentScene;
+}
+
+
+void Game::OnGameOver()
+{
+	pendingGameOver = true;
 }
 
 Game::Game()
@@ -87,6 +109,22 @@ void Game::UpdateInputs()
 	}
 }
 
+int Game::LoadHighScore()
+{
+	std::ifstream f("highscore.txt");
+	int hs = 0;
+	if (f.is_open())
+		f >> hs;
+	return hs;
+}
+
+void Game::SaveHighScore(int score)
+{
+	std::ofstream f("highscore.txt");
+	if (f.is_open())
+		f << score;
+}
+
 void Game::Update(float deltaTime)
 {
 	UpdateInputs();
@@ -110,6 +148,28 @@ void Game::Loop()
 		mph->Update();
 
 		currentScene->RemoveActors();
+
+		if (pendingRespawn)
+		{
+			ChangeScene(new GameScene(instance->GI, instance->mph));
+
+			GameScene* gs = (GameScene*)instance->currentScene;
+			gs->player->lives = pendingLives;
+			gs->player->grenades = pendingGrenades;
+			gs->score = currentScore;
+
+			pendingRespawn = false;
+		}
+
+		if (pendingGameOver)
+		{
+			int hs = LoadHighScore();
+			if (currentScore > hs)
+				SaveHighScore(currentScore);
+
+			ChangeScene(new GameOverScene(instance->GI, instance->mph));
+			pendingGameOver = false;
+		}
 
 		Render();
 

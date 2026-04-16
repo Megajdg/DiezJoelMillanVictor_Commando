@@ -4,12 +4,12 @@
 
 class Scene
 {
-
 	class Sprite* debugCircle256 = NULL;
 	class Sprite* debugRectangle400 = NULL;
 
 protected:
 	std::vector<class Actor*> actors;
+	std::vector<class Actor*> ui;
 	std::vector<class Actor*> actors_to_destroy;
 
 	struct {
@@ -20,6 +20,8 @@ public:
 	class GraphicsInterface* GI;
 	class MyPhysics* mph;
 
+	const std::vector<Actor*>& GetActors() const { return actors; }
+
 public:
 	Scene(class GraphicsInterface* GI, class MyPhysics* mph);
 	~Scene();
@@ -28,6 +30,7 @@ public:
 	
 	virtual void Render();
 	void AddActor(Actor* a);
+	void AddUI(Actor* a);
 	void DestroyActor(class Actor*);
 	void RemoveActors();
 };

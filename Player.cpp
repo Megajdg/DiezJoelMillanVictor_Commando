@@ -2,6 +2,17 @@
 #include "Game.h"
 #include "SDL3/SDL.h"
 #include "GunWeapon.h"
+#include "Grenade.h"
+#include "GameScene.h"
+#include "Parameters.h"
+
+template<typename T>
+T Clamp(const T& value, const T& minVal, const T& maxVal)
+{
+    if (value < minVal) return minVal;
+    if (value > maxVal) return maxVal;
+    return value;
+}
 
 Player::Player(Scene* myscene, std::string img_name, float side_size) : Sprite(myscene, img_name, Vector2(side_size, side_size))
 {
@@ -14,40 +25,100 @@ Player::Player(Scene* myscene, std::string img_name, Transform transform, float 
 {
 	Game::camera.target = this;
 	weapon = new GunWeapon();
-
 }
 
 void Player::Update(float deltaTime)
 {
-	UpdateMovement(deltaTime);
+    UpdateMovement(deltaTime);
+
+    float mapLeft = -1272 * 0.5f + 50;
+    float mapRight = 1272 * 0.5f - 50;
+    float mapTop = -6232 + 50;
+    float mapBottom = 0;
+
+    // Limitar X
+    transform.position.x = Clamp(transform.position.x, mapLeft, mapRight);
+
+    float hudHeight = 200;
+    float limitBottom = Game::camera.position.y + Parameters::screenHeight * 0.5f - hudHeight - 50;
+
+    // Limitar Y dentro del mapa
+    transform.position.y = Clamp(transform.position.y, mapTop, mapBottom);
+
+    // Límite inferior real
+    if (transform.position.y > limitBottom)
+        transform.position.y = limitBottom;
 }
 
 void Player::UpdateMovement(float deltaTime)
 {
-	Vector2 direction;
+    Vector2 dir(0, 0);
 
-	if (Game::keyDown[SDLK_A])
-		transform.rotation -= ang_speed * deltaTime;
-	if (Game::keyDown[SDLK_D])
-		transform.rotation += ang_speed * deltaTime;
+    bool up = Game::keyDown[SDLK_W] || Game::keyDown[SDLK_UP];
+    bool down = Game::keyDown[SDLK_S] || Game::keyDown[SDLK_DOWN];
+    bool left = Game::keyDown[SDLK_A] || Game::keyDown[SDLK_LEFT];
+    bool right = Game::keyDown[SDLK_D] || Game::keyDown[SDLK_RIGHT];
 
-	direction.y = -std::cos(transform.rotation *3.14159/180);
-	direction.x = std::sin(transform.rotation *3.14159/180);
-	if (Game::keyDown[SDLK_W])
-		transform.position += direction * linear_speed * deltaTime;
-	if (Game::keyDown[SDLK_S])
-		transform.position -= direction * linear_speed * deltaTime;
+    if (up)    dir.y -= 1;
+    if (down)  dir.y += 1;
+    if (left)  dir.x -= 1;
+    if (right) dir.x += 1;
 
-	if (Game::keyDown[SDLK_SPACE])
-	{
-		Game::keyDown[SDLK_SPACE] = false;
+    if (dir.x != 0 || dir.y != 0)
+    {
+        dir = dir.normalize();
 
-		Transform shot;
-		shot.position = transform.position + Vector2(cos(transform.rotation * 0.01745f),
-			sin(transform.rotation * 0.01745f)) * 50.f;
+        float speed = 300.f;
+        transform.position += dir * speed * deltaTime;
 
-		shot.rotation = transform.rotation;
+        transform.rotation = atan2(dir.y, dir.x) * 180.f / 3.14159f;
+    }
 
-		weapon->Shoot(myScene, shot);
-	}
+    // Disparo
+    if (Game::keyDown[SDLK_SPACE])
+    {
+        Game::keyDown[SDLK_SPACE] = false;
+
+        Transform shot;
+        shot.position = transform.position + Vector2(cos(transform.rotation * 0.01745f),
+            sin(transform.rotation * 0.01745f)) * 50.f;
+
+        shot.rotation = transform.rotation;
+
+        weapon->Shoot(myScene, shot);
+    }
+
+    if (Game::keyDown[SDLK_G] && !grenadeActive)
+    {
+        Game::keyDown[SDLK_G] = false;
+
+        Transform t;
+        t.position = transform.position;
+        t.rotation = transform.rotation;
+
+        Vector2 dir(0, -1); // siempre hacia arriba
+
+        if (grenades > 0)
+        {
+            grenades--;
+            new Grenade(myScene, t, dir, this, false);
+            grenadeActive = true;
+        }
+        else return;
+    }
 }
+
+void Player::TakeDamage(int dmg)
+{
+    lives--;
+
+    if (lives > 0)
+    {
+        Game::OnPlayerDeath(this);
+    }
+    else
+    {
+        Game::OnGameOver();
+    }
+}
+

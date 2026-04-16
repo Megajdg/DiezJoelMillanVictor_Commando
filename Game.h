@@ -3,6 +3,7 @@
 #include <map>
 #include "Scene.h"
 #include "Camera.h"
+#include "Player.h"
 
 class Game
 {
@@ -15,8 +16,13 @@ public:
 	static std::map<int, bool> keyDown;
 
 	static Camera camera;
+	static int currentScore;
+	
+	static int LoadHighScore();
 
 	static void ChangeScene(Scene* newScene);
+	static void OnPlayerDeath(Player* p);
+	static void OnGameOver();
 private:
 	static Game* instance;
 	
@@ -36,5 +42,11 @@ private:
 	void Update(float deltaTime);
 	void Render();
 	void UpdateInputs();
+	void SaveHighScore(int score);
+
+	static bool pendingRespawn;
+	static int pendingLives;
+	static int pendingGrenades;
+	static bool pendingGameOver;
 };
 

@@ -7,8 +7,13 @@ class Player : public Sprite
 public:
 	Player(Scene* myscene, std::string img_name, float side_size);
 	Player(Scene* myscene, std::string img_name, Transform transform, float side_size);
+	
+	int lives = 5;
+	int grenades = 5;
 
 	virtual void Update(float deltaTime);
+	bool grenadeActive = false;
+	void TakeDamage(int dmg);
 
 private:
 

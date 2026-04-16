@@ -5,7 +5,7 @@
 class Camera
 {
 public:
-	Camera(Vector2 initial_camera_position) :position(initial_camera_position) {};
+	Camera(Vector2 initial_camera_position) : position(initial_camera_position) {};
 
 	void Update();
 
