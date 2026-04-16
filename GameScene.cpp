@@ -22,7 +22,7 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
     GenerateColliders();
 
     // Player
-    GI->LoadImage("Joe.png");
+    GI->LoadImage("Enemy.png");
     GI->LoadImage("player_spritesheet_final.png");
     Transform t;
     t.position = Vector2(0, -200);
@@ -44,7 +44,6 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
     GI->LoadImage("grenade.png");
     GI->LoadImage("explosion.png");
-    GI->LoadImage("enemy.png");
 }
 
 void GameScene::Update(float dt)

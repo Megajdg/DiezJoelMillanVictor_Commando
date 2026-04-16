@@ -10,7 +10,7 @@ enum class EnemyState
     SHOOTING
 };
 
-class Enemy : public Sprite
+class Enemy : public AnimatedEntity
 {
 public:
     Enemy(Scene* scene, const Transform& t, Player* target);

@@ -1,8 +1,8 @@
 #pragma once
-#include "Sprite.h"
+#include "AnimatedEntity.h"
 #include "Weapon.h"
 
-class Player : public Sprite
+class Player : public AnimatedEntity
 {
 public:
 	Player(Scene* myscene, std::string img_name, float side_size);

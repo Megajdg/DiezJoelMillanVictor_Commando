@@ -1,5 +1,5 @@
-﻿  Player.cpp
-C:\Users\joeld\OneDrive\Escritorio\CPPGit\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Player.cpp")
+﻿  Enemy.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Enemy.cpp")
   
-  FreedomForArias.vcxproj -> C:\Users\joeld\OneDrive\Escritorio\CPPGit\x64\Debug\DiezJoelMillanVictor_Commando.exe
+  FreedomForArias.vcxproj -> C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\x64\Debug\DiezJoelMillanVictor_Commando.exe

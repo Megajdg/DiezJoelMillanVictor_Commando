@@ -6,6 +6,8 @@
 #include "GameScene.h"
 #include "Game.h"
 #include "Parameters.h"
+#include "AnimatedEntity.h"
+#include "AnimationsEnemy.h"
 
 template<typename T>
 T Clamp(const T& value, const T& minVal, const T& maxVal)
@@ -15,10 +17,13 @@ T Clamp(const T& value, const T& minVal, const T& maxVal)
     return value;
 }
 
-Enemy::Enemy(Scene* scene, const Transform& t, Player* target) : Sprite(scene, "Joe.png", t, Vector2(100, 100))
+Enemy::Enemy(Scene* scene, const Transform& t, Player* target) : AnimatedEntity(scene, "player_spritesheet_final.png", t, Vector2(100, 100))
 {
     this->target = target;
     scene->AddActor(this);
+
+    animationSet = LoadEnemyAnimations();
+    SetAnimation("idle_front");
 
     CircleCollider* col = new CircleCollider();
     col->radius = 30;
@@ -55,6 +60,8 @@ Enemy::Enemy(Scene* scene, const Transform& t, Player* target) : Sprite(scene, "
 
 void Enemy::Update(float dt)
 {
+    AnimatedEntity::Update(dt);
+
     stateTimer -= dt;
 
     switch (state)

@@ -1,0 +1,210 @@
+﻿  Actor.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Actor.cpp")
+  
+  Animation.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Animation.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Animation.cpp")
+  
+  Bullet.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Bullet.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Bullet.cpp")
+  
+  Camera.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Camera.cpp")
+  
+  CircleCollider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "CircleCollider.cpp")
+  
+  Collider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Collider.cpp")
+  
+  CreditsScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "CreditsScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "CreditsScene.cpp")
+  
+  DiezJoelMillanVictor_Commando.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "DiezJoelMillanVictor_Commando.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "DiezJoelMillanVictor_Commando.cpp")
+  
+  Enemy.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Enemy.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Enemy.cpp")
+  
+  EnemySpawner.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "EnemySpawner.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "EnemySpawner.cpp")
+  
+  Explosion.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Explosion.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Explosion.cpp")
+  
+  Game.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Game.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Game.cpp")
+  
+  GameOverScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GameOverScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "GameOverScene.cpp")
+  
+  GameScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GameScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "GameScene.cpp")
+  
+  GraphicsInterface.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GraphicsInterface.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\GraphicsInterface.h(8,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "GraphicsInterface.cpp")
+  
+  Grenade.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Grenade.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Grenade.cpp")
+  
+  GrenadierEnemy.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GrenadierEnemy.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "GrenadierEnemy.cpp")
+  
+  GunWeapon.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GunWeapon.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "GunWeapon.cpp")
+  
+  HelpScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HelpScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "HelpScene.cpp")
+  
+  HUDWidget.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HUDWidget.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "HUDWidget.cpp")
+  
+  Compilando...
+  HybridEnemy.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HybridEnemy.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "HybridEnemy.cpp")
+  
+  IntroScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "IntroScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "IntroScene.cpp")
+  
+  MenuScene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "MenuScene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "MenuScene.cpp")
+  
+  MyPhysics.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "MyPhysics.cpp")
+  
+  Parameters.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Parameters.cpp")
+  
+  Player.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Player.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Player.cpp")
+  
+  RectangleCollider.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "RectangleCollider.cpp")
+  
+  Scene.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Scene.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\GraphicsInterface.h(8,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Scene.cpp")
+  
+  ShooterEnemy.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "ShooterEnemy.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "ShooterEnemy.cpp")
+  
+  Sprite.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Sprite.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Sprite.h(5,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Sprite.cpp")
+  
+  StaticMapActor.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "StaticMapActor.cpp")
+  
+  Transform.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Transform.cpp")
+  
+  Vector2.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Vector2.cpp")
+  
+  Weapon.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Weapon.cpp")
+  
+  Widget.cpp
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Widget.cpp")
+  
+C:\Users\Victor\Documents\DiezJoelMillanVictor_Commando2\GraphicsInterface.h(8,10): error C1083: No se puede abrir el archivo incluir: 'SDL3/SDL.h': No such file or directory
+  (compilando archivo de origen "Widget.cpp")
+  

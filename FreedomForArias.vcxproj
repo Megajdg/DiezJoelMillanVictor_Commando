@@ -105,14 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3_ttf-3.2.2\include;C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3_image-3.2.6\include;C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3-3.4.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\include;$(ProjectDir)SDL\SDL3_image-3.2.6\include;$(ProjectDir)SDL\SDL3-3.4.0\include</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3_ttf-3.2.2\lib\x64;C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3_image-3.2.6\lib\x64;C:\Users\joeld\OneDrive\Escritorio\CPPGit\SDL\SDL3-3.4.0\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;SDL3_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\lib\x64;$(ProjectDir)\SDL\SDL3_image-3.2.6\lib\x64;$(ProjectDir)SDL\SDL3-3.4.0\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;SDL3_ttf.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +133,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="AnimatedEntity.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationsEnemy.cpp" />
+    <ClCompile Include="AnimationSet.cpp" />
+    <ClCompile Include="AnimationsPlayer.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -170,7 +174,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="AnimatedEntity.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationsEnemy.h" />
+    <ClInclude Include="AnimationSet.h" />
+    <ClInclude Include="AnimationsPlayer.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CircleCollider.h" />

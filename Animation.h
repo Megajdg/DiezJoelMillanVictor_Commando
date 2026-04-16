@@ -1,33 +1,26 @@
 #pragma once
-
 #include <vector>
 #include <string>
-#include "SDL3/SDL.h"
+
+struct Frame
+{
+    float x, y, w, h;
+};
 
 class Animation
 {
 public:
-    Animation() = default;
-
-    // Nombre opcional (por si quieres identificarla)
     std::string name;
+    std::vector<Frame> frames;
 
-    // Lista de frames (cada uno es un rectángulo dentro del spritesheet)
-    std::vector<SDL_FRect> frames;
-
-    // Tiempo que dura cada frame (en segundos)
     float frameTime = 0.1f;
-
-    // ¿La animación se repite?
-    bool loop = true;
-
-    // Estado interno
+    float timer = 0.f;
     int currentFrame = 0;
-    float timer = 0.0f;
+
+    bool loop = true;
     bool finished = false;
 
-public:
-    void Update(float deltaTime);
-    const SDL_FRect& GetCurrentFrame() const;
     void Reset();
+    void Update(float dt);
+    Frame GetCurrentFrame() const;
 };

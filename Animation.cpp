@@ -1,11 +1,11 @@
 #include "Animation.h"
 
-void Animation::Update(float deltaTime)
+void Animation::Update(float dt)
 {
-    if (frames.empty() || finished)
+    if (finished || frames.empty())
         return;
 
-    timer += deltaTime;
+    timer += dt;
 
     while (timer >= frameTime)
     {
@@ -28,9 +28,8 @@ void Animation::Update(float deltaTime)
     }
 }
 
-const SDL_FRect& Animation::GetCurrentFrame() const
+Frame Animation::GetCurrentFrame() const
 {
-    // Asumimos que siempre se llama cuando hay frames
     return frames[currentFrame];
 }
 
