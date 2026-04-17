@@ -13,14 +13,13 @@ enum class EnemyState
 class Enemy : public AnimatedEntity
 {
 public:
-    Enemy(Scene* scene, const Transform& t, Player* target);
-
+    Enemy(Scene* scene, const Transform& t, Player* target, const std::string& spritesheet);
     Player* target = nullptr;
 
     float speed = 200.f;
     int health = 1;
 
-    float shootCooldown = 1.5f;   // tiempo entre disparos
+    float shootCooldown = 1.5f;
     float shootTimer = 0.f;
 
     bool hasShot = false;

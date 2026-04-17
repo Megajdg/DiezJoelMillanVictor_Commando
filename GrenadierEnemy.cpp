@@ -3,10 +3,8 @@
 #include "Scene.h"
 
 GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target)   // reutilizamos la IA base
+    : Enemy(scene, t, target, "Grenadier.png")
 {
-    // Cambiar sprite si quieres
-    image_name = "Joe.png";
 }
 
 void GrenadierEnemy::Update(float dt)

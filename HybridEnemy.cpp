@@ -3,9 +3,9 @@
 #include "Grenade.h"
 #include <cstdlib> // rand()
 
-HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target)
+HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target)
+    : Enemy(scene, t, target, "Hybrid.png")
 {
-    image_name = "Joe.png"; // o el sprite que quieras
 }
 
 void HybridEnemy::Update(float dt)

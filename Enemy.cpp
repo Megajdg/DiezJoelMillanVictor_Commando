@@ -7,6 +7,7 @@
 #include "Game.h"
 #include "Parameters.h"
 #include "AnimatedEntity.h"
+#include "AnimationsPlayer.h"
 #include "AnimationsEnemy.h"
 
 template<typename T>
@@ -17,19 +18,73 @@ T Clamp(const T& value, const T& minVal, const T& maxVal)
     return value;
 }
 
-Enemy::Enemy(Scene* scene, const Transform& t, Player* target) : AnimatedEntity(scene, "player_spritesheet_final.png", t, Vector2(100, 100))
+static std::string DirectionToAnimation(float angle)
 {
+    while (angle < 0) angle += 360;
+    while (angle >= 360) angle -= 360;
+
+    if (angle >= 337.5f || angle < 22.5f)
+        return "run_front";
+
+    if (angle < 67.5f)
+        return "run_diag_front_right";
+
+    if (angle < 112.5f)
+        return "run_right";
+
+    if (angle < 157.5f)
+        return "run_diag_back_right";
+
+    if (angle < 202.5f)
+        return "run_back";
+
+    if (angle < 247.5f)
+        return "run_diag_back_left";
+
+    if (angle < 292.5f)
+        return "run_left";
+
+    return "run_diag_front_left";
+}
+
+static std::string DirectionToIdle(float angle)
+{
+    while (angle < 0) angle += 360;
+    while (angle >= 360) angle -= 360;
+
+    // FRONT (0°)
+    if (angle >= 315.f || angle < 45.f)
+        return "idle_front";
+
+    // RIGHT (90°)
+    if (angle < 135.f)
+        return "idle_right";
+
+    // BACK (180°)
+    if (angle < 225.f)
+        return "idle_back";
+
+    // LEFT (270°)
+    return "idle_left";
+}
+
+
+Enemy::Enemy(Scene* scene, const Transform& t, Player* target, const std::string& spritesheet)
+    : AnimatedEntity(scene, spritesheet, t, Vector2(100, 100))
+{
+
     this->target = target;
     scene->AddActor(this);
 
     animationSet = LoadEnemyAnimations();
     SetAnimation("idle_front");
 
+    // Collider
     CircleCollider* col = new CircleCollider();
     col->radius = 30;
     scene->mph->AddCollider(col, this);
 
-    // Elegir dirección inicial según dónde ha aparecido
+    // IA inicial
     float mapLeft = -1272 * 0.5f + 50;
     float mapRight = 1272 * 0.5f - 50;
     float mapTop = -6232 + 50;
@@ -37,23 +92,11 @@ Enemy::Enemy(Scene* scene, const Transform& t, Player* target) : AnimatedEntity(
 
     Vector2 pos = transform.position;
 
-    // Si está a la izquierda del mapa mover hacia la derecha
-    if (pos.x < mapLeft)
-        moveDir = Vector2(1, 0);
+    if (pos.x < mapLeft) moveDir = Vector2(1, 0);
+    else if (pos.x > mapRight) moveDir = Vector2(-1, 0);
+    else if (pos.y < mapTop) moveDir = Vector2(0, 1);
+    else if (pos.y > mapBottom) moveDir = Vector2(0, -1);
 
-    // Si está a la derecha del mapa mover hacia la izquierda
-    else if (pos.x > mapRight)
-        moveDir = Vector2(-1, 0);
-
-    // Si está por arriba del mapa mover hacia abajo
-    else if (pos.y < mapTop)
-        moveDir = Vector2(0, 1);
-
-    // Si está por abajo (no debería, pero por seguridad)
-    else if (pos.y > mapBottom)
-        moveDir = Vector2(0, -1);
-
-    // Primer estado
     state = EnemyState::MOVING;
     stateTimer = 0.5f + (rand() % 1000) / 1000.f;
 }
@@ -95,17 +138,30 @@ void Enemy::Update(float dt)
 
 void Enemy::UpdateMoving(float dt)
 {
-    // Si acabó el tiempo de movimiento pasar a disparar
-    if (stateTimer <= 0.f)
+    // Si no se mueve  idle
+    float len2 = moveDir.x * moveDir.x + moveDir.y * moveDir.y;
+    if (len2 < 0.0001f)
     {
-        state = EnemyState::SHOOTING;
-        stateTimer = 0.3f + (rand() % 300) / 1000.f; // 0.3–0.6s
+        float angle = transform.rotation + 90.f;
+        SetAnimation(DirectionToIdle(angle));
         return;
     }
 
-    // Mover en la dirección elegida
+    // Si acabó el tiempo de movimiento  pasar a disparar
+    if (stateTimer <= 0.f)
+    {
+        state = EnemyState::SHOOTING;
+        stateTimer = 0.3f + (rand() % 300) / 1000.f;
+        return;
+    }
+
+    // Mover
     transform.position += moveDir * speed * dt;
     transform.rotation = atan2(moveDir.y, moveDir.x) * 180.f / 3.14159f;
+
+    // Animación de run según dirección
+    float angle = transform.rotation + 90.f;
+    SetAnimation(DirectionToAnimation(angle));
 }
 
 void Enemy::UpdateShooting(float dt)
@@ -126,6 +182,11 @@ void Enemy::UpdateShooting(float dt)
         ShootAtPlayer();
         hasShot = true;
     }
+
+    Vector2 dir = (target->transform.position - transform.position).normalize();
+    float angle = atan2(dir.y, dir.x) * 180.f / 3.14159f + 90.f;
+
+    SetAnimation(DirectionToIdle(angle));
 }
 
 void Enemy::ChooseNewDirection()

@@ -25,6 +25,9 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
     // Player
     GI->LoadImage("Enemy.png");
+    GI->LoadImage("Shooter.png");
+    GI->LoadImage("Grenadier.png");
+    GI->LoadImage("Hybrid.png");
     GI->LoadImage("player_spritesheet_final.png");
     Transform t;
     t.position = Vector2(0, -200);
@@ -40,7 +43,7 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
     new HUDWidget(this, player);
 
-    //new EnemySpawner(this);
+    new EnemySpawner(this);
 
     GI->LoadImage("grenade_powerup.png");
 

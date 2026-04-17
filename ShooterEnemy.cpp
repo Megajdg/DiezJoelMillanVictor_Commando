@@ -2,10 +2,8 @@
 #include "Bullet.h"
 
 ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target)
+    : Enemy(scene, t, target, "Shooter.png")
 {
-    // Cambiar sprite si quieres
-    image_name = "Joe.png";
 }
 
 void ShooterEnemy::Update(float dt)
