@@ -138,6 +138,7 @@
     <ClCompile Include="AnimationsEnemy.cpp" />
     <ClCompile Include="AnimationSet.cpp" />
     <ClCompile Include="AnimationsPlayer.cpp" />
+    <ClCompile Include="AreaCompleteScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="AnimationsEnemy.h" />
     <ClInclude Include="AnimationSet.h" />
     <ClInclude Include="AnimationsPlayer.h" />
+    <ClInclude Include="AreaCompleteScene.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CircleCollider.h" />

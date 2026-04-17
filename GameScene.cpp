@@ -11,6 +11,7 @@
 #include "EnemySpawner.h"
 #include "HUDWidget.h"
 #include "GrenadePowerup.h"
+#include "AreaCompleteScene.h"
 
 GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 {
@@ -72,6 +73,13 @@ void GameScene::Update(float dt)
     }
 
     Scene::Update(dt);
+
+    // Si el jugador llega al final del mapa
+    if (player->transform.position.y < -6000)
+    {
+        Game::ChangeScene(new AreaCompleteScene(GI, mph, 1));
+        return;
+    }
 }
 
 void GameScene::Render()
