@@ -19,6 +19,7 @@ int Game::pendingLives = 0;
 int Game::pendingGrenades = 0;
 bool Game::pendingGameOver = false;
 int Game::currentScore = 0;
+int Game::pendingArea = 1;
 
 void Game::Create()
 {
@@ -43,6 +44,13 @@ void Game::Play()
 void Game::ChangeScene(Scene* newScene)
 {
 	if (instance->currentScene)
+	{
+		GameScene* gs = dynamic_cast<GameScene*>(instance->currentScene);
+		if (gs && gs->mapActor)
+			instance->mph->RemoveMapColliders(gs->mapActor);
+	}
+
+	if (instance->currentScene)
 		delete instance->currentScene;
 
 	instance->currentScene = newScene;
@@ -54,14 +62,26 @@ void Game::ChangeScene(Scene* newScene)
 		instance->game_end = true;
 }
 
+void Game::SavePlayerState(Player* p)
+{
+	pendingLives = p->lives;
+	pendingGrenades = p->grenades;
+	GameScene* gs = (GameScene*)Game::instance->currentScene;
+	pendingArea = gs->area;
+}
+
+void Game::RestorePlayerState(GameScene* gs)
+{
+	gs->player->lives = pendingLives;
+	gs->player->grenades = pendingGrenades;
+	gs->score = currentScore;
+}
+
 void Game::OnPlayerDeath(Player* p)
 {
 	pendingRespawn = true;
-	pendingLives = p->lives;
-	pendingGrenades = p->grenades;
-	GameScene* gs = (GameScene*)instance->currentScene;
+	SavePlayerState(p);
 }
-
 
 void Game::OnGameOver()
 {
@@ -74,7 +94,6 @@ Game::Game()
 	mph = new MyPhysics();
 
 	currentScene = new MenuScene(GI, mph);
-
 }
 
 Game::~Game()
@@ -151,12 +170,10 @@ void Game::Loop()
 
 		if (pendingRespawn)
 		{
-			ChangeScene(new GameScene(instance->GI, instance->mph));
+			ChangeScene(new GameScene(instance->GI, instance->mph, pendingArea));
 
 			GameScene* gs = (GameScene*)instance->currentScene;
-			gs->player->lives = pendingLives;
-			gs->player->grenades = pendingGrenades;
-			gs->score = currentScore;
+			RestorePlayerState(gs);
 
 			pendingRespawn = false;
 		}

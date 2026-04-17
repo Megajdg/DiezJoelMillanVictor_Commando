@@ -36,7 +36,7 @@ void MenuScene::Update(float dt)
     {
         switch (selected)
         {
-        case 0: Game::ChangeScene(new GameScene(GI, mph)); break;
+        case 0: Game::ChangeScene(new GameScene(GI, mph, 1)); break;
         case 1: Game::ChangeScene(new HelpScene(GI, mph)); break;
         case 2: Game::ChangeScene(new CreditsScene(GI, mph)); break;
         case 3: Game::ChangeScene(nullptr); break;

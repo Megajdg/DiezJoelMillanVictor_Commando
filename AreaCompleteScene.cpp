@@ -15,10 +15,15 @@ void AreaCompleteScene::Update(float dt)
     // Espera 3 segundos o pulsa una tecla
     if (timer > 3.0f || Game::keyDown[SDLK_SPACE])
     {
-        if (area == 1)
-            Game::ChangeScene(new GameScene(GI, mph));
-        //else if (area == 2)
-            //Game::ChangeScene(new GameScene(GI, mph));
+        int nextArea = area + 1;
+        if (nextArea > 3) nextArea = 1;
+
+        // Cambiar a la nueva área
+        Game::ChangeScene(new GameScene(GI, mph, nextArea));
+
+        // Restaurar estado en la nueva escena
+        GameScene* gs = (GameScene*)Game::instance->currentScene;
+        Game::RestorePlayerState(gs);
     }
 }
 

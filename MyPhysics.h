@@ -32,6 +32,7 @@ class MyPhysics
 public:
 	void RemoveActor(class Actor*);
 	void AddCollider(class Collider* col, class Actor* act);
+	void RemoveMapColliders(Actor* mapActor);
 
 	__forceinline ColliderMap GetCollidersByActor() const { return colliders_by_actor; }
 

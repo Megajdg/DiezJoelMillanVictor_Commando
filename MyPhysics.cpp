@@ -189,3 +189,20 @@ void MyPhysics::AddCollider(Collider* col, Actor* act)
 		it->second->push_back(col);
 	}
 }
+
+void MyPhysics::RemoveMapColliders(Actor* mapActor)
+{
+	auto it = colliders_by_actor.find(mapActor);
+	if (it != colliders_by_actor.end())
+	{
+		// Borrar todos los colliders del mapa
+		for (Collider* c : *it->second)
+			delete c;
+
+		// Borrar el vector
+		delete it->second;
+
+		// Quitar del mapa
+		colliders_by_actor.erase(it);
+	}
+}

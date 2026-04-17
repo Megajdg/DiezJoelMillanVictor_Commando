@@ -32,10 +32,10 @@ void HUDWidget::Render()
 {
     auto GI = myScene->GI;
 
-    int x = Parameters::screenWidth * 0.253f;
-    int y = Parameters::screenHeight * 0.66f;
-
     float hudHeight = 1000;
+    int hudWidth = 1270;
+    int x = (Parameters::screenWidth - hudWidth) / 2;
+    int y = Parameters::screenHeight * 0.66f;
     GI->DrawRectScreen(
         0,
         y - 20,

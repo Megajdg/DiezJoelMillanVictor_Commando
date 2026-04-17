@@ -7,18 +7,20 @@
 class GameScene : public Scene
 {
 public:
-    GameScene(GraphicsInterface* GI, MyPhysics* mph);
+    GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber);
 
-    StaticMapActor* mapActor = new StaticMapActor(this);
+    StaticMapActor* mapActor = nullptr;
 
     void Update(float dt) override;
     void Render() override;
 
     int score = 0;
 
+    int area = 1;
+
     void AddScore(int amount);
 
-    void GenerateColliders();
+    void GenerateColliders(std::string mapImage, std::string collisionMask);
 
     Player* GetPlayer() const { return player; }
 

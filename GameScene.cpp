@@ -13,15 +13,37 @@
 #include "GrenadePowerup.h"
 #include "AreaCompleteScene.h"
 
-GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
+GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Scene(GI, mph), area(areaNumber)
 {
-    // Fondo
-    GI->LoadImage("area1_final.png");
-    Sprite* bg = new Sprite(this, "area1_final.png", Vector2(1272, 6232));
+    std::string mapImage;
+    std::string collisionMask;
+
+    switch (area)
+    {
+    case 1:
+        mapImage = "area1_final.png";
+        collisionMask = "area1_collidermap_final.png";
+        break;
+
+    case 2:
+        mapImage = "area2_final.png";
+        collisionMask = "area2_collidermap_final.png";
+        break;
+
+    case 3:
+        mapImage = "area3_final.png";
+        collisionMask = "area3_collidermap_final.png";
+        break;
+    }
+
+    GI->LoadImage(mapImage);
+    Sprite* bg = new Sprite(this, mapImage, Vector2(1272, 6232));
     bg->transform.position = Vector2(0, -6232 * 0.5f);
     actors.insert(actors.begin(), bg);
 
-    GenerateColliders();
+    mapActor = new StaticMapActor(this);
+
+    GenerateColliders(mapImage, collisionMask);
 
     // Player
     GI->LoadImage("Enemy.png");
@@ -40,17 +62,39 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
     new HUDWidget(this, player);
 
-    //new EnemySpawner(this);
+    new EnemySpawner(this);
 
     GI->LoadImage("grenade_powerup.png");
 
-    grenadePickupPositions = {
-        {  300,  -1700 },
-        {  400,  -3000 },
-        { -500,  -4600 },
-        { -550,  -5050 },
-        { 400,  -5700 }
-    };
+    switch (area)
+    {
+    case 1:
+        grenadePickupPositions = {
+            {  300,  -1700 },
+            {  400,  -3000 },
+            { -500,  -4600 },
+            { -550,  -5050 },
+            { 400,  -5700 }
+        };
+        break;
+
+    case 2:
+        grenadePickupPositions = {
+            {  200, -1500 },
+            { -300, -2800 },
+            {  500, -4200 }
+        };
+        break;
+
+    case 3:
+        grenadePickupPositions = {
+            { -200, -1800 },
+            {  350, -3500 },
+            { -450, -5200 }
+        };
+        break;
+    }
+
 
     for (auto& pos : grenadePickupPositions)
     {
@@ -77,7 +121,8 @@ void GameScene::Update(float dt)
     // Si el jugador llega al final del mapa
     if (player->transform.position.y < -6000)
     {
-        Game::ChangeScene(new AreaCompleteScene(GI, mph, 1));
+        Game::SavePlayerState(player);
+        Game::ChangeScene(new AreaCompleteScene(GI, mph, area));
         return;
     }
 }
@@ -94,10 +139,10 @@ void GameScene::AddScore(int amount)
     Game::currentScore = score;
 }
 
-void GameScene::GenerateColliders()
+void GameScene::GenerateColliders(std::string mapImage, std::string collisionMask)
 {
     int w, h;
-    auto mask = GI->LoadCollisionMask("area1_collidermap_final.png", w, h);
+    auto mask = GI->LoadCollisionMask(collisionMask, w, h);
     if (mask.empty())
     {
         printf("ERROR: collision mask not loaded\n");
@@ -105,7 +150,7 @@ void GameScene::GenerateColliders()
     }
 
     // Obtener info del mapa visual desde GraphicsInterface
-    MapInfo info = GI->GetMapInfo("area1_final.png", 1272, 6232);
+    MapInfo info = GI->GetMapInfo(mapImage, 1272, 6232);
 
     float scaleX = info.scaleX;
     float scaleY = info.scaleY;
@@ -115,8 +160,6 @@ void GameScene::GenerateColliders()
 
     float mapOffsetX = -1272 * 0.5f;
     float mapOffsetY = -6232;
-
-    StaticMapActor* mapActor = new StaticMapActor(this);
 
     for (int y = 0; y < h; y += tileSize)
     {

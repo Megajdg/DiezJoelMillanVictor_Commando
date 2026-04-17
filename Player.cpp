@@ -65,13 +65,7 @@ T Clamp(const T& value, const T& minVal, const T& maxVal)
     return value;
 }
 
-//Player::Player(Scene* myscene, std::string img_name, float side_size) : Sprite(myscene, img_name, Vector2(side_size, side_size))
-//{
-//	Game::camera.target = this;
-//	weapon = new GunWeapon();
-//}
-Player::Player(Scene* myscene, std::string img_name, float side_size)
-    : AnimatedEntity(myscene, img_name, Transform(), Vector2(side_size, side_size))
+Player::Player(Scene* myscene, std::string img_name, float side_size) : AnimatedEntity(myscene, img_name, Transform(), Vector2(side_size, side_size))
 {
     Game::camera.target = this;
     weapon = new GunWeapon();
@@ -80,8 +74,7 @@ Player::Player(Scene* myscene, std::string img_name, float side_size)
     SetAnimation("idle_front");
 }
 
-Player::Player(Scene* myscene, std::string img_name, Transform transform, float side_size)
-    : AnimatedEntity(myscene, img_name, transform, Vector2(side_size, side_size))
+Player::Player(Scene* myscene, std::string img_name, Transform transform, float side_size) : AnimatedEntity(myscene, img_name, transform, Vector2(side_size, side_size))
 {
 
     Game::camera.target = this;
@@ -105,8 +98,8 @@ void Player::Update(float deltaTime)
     // Limitar X
     transform.position.x = Clamp(transform.position.x, mapLeft, mapRight);
 
-    float hudHeight = 200;
-    float limitBottom = Game::camera.position.y + Parameters::screenHeight * 0.5f - hudHeight - 50;
+    float hudHeight = 450;
+    float limitBottom = Game::camera.position.y + Parameters::screenHeight * 0.66f - hudHeight;
 
     // Limitar Y dentro del mapa
     transform.position.y = Clamp(transform.position.y, mapTop, mapBottom);

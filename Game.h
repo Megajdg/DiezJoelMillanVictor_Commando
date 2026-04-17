@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "Camera.h"
 #include "Player.h"
+#include "GameScene.h"
 
 class Game
 {
@@ -21,10 +22,13 @@ public:
 	static int LoadHighScore();
 
 	static void ChangeScene(Scene* newScene);
+	static void SavePlayerState(Player* p);
+	static void RestorePlayerState(GameScene* gs);
 	static void OnPlayerDeath(Player* p);
 	static void OnGameOver();
-private:
 	static Game* instance;
+	Scene* currentScene;
+private:
 	
 	static float DeltaTime;
 
@@ -33,7 +37,6 @@ private:
 
 	bool game_end = false;
 
-	Scene* currentScene;
 
 	Game();
 	~Game();
@@ -48,5 +51,6 @@ private:
 	static int pendingLives;
 	static int pendingGrenades;
 	static bool pendingGameOver;
+	static int pendingArea;
 };
 
