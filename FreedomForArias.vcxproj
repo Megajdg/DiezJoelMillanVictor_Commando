@@ -152,6 +152,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GraphicsInterface.cpp" />
     <ClCompile Include="Grenade.cpp" />
+    <ClCompile Include="GrenadePowerup.cpp" />
     <ClCompile Include="GrenadierEnemy.cpp" />
     <ClCompile Include="GunWeapon.cpp" />
     <ClCompile Include="HelpScene.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GraphicsInterface.h" />
     <ClInclude Include="Grenade.h" />
+    <ClInclude Include="GrenadePowerup.h" />
     <ClInclude Include="GrenadierEnemy.h" />
     <ClInclude Include="GunWeapon.h" />
     <ClInclude Include="HelpScene.h" />

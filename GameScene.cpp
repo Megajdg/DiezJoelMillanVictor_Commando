@@ -10,6 +10,7 @@
 #include "CircleCollider.h"
 #include "EnemySpawner.h"
 #include "HUDWidget.h"
+#include "GrenadePowerup.h"
 
 GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 {
@@ -38,7 +39,22 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
     new HUDWidget(this, player);
 
-    new EnemySpawner(this);
+    //new EnemySpawner(this);
+
+    GI->LoadImage("grenade_powerup.png");
+
+    grenadePickupPositions = {
+        {  300,  -1700 },
+        {  400,  -3000 },
+        { -500,  -4600 },
+        { -550,  -5050 },
+        { 400,  -5700 }
+    };
+
+    for (auto& pos : grenadePickupPositions)
+    {
+        new GrenadePowerup(this, pos);
+    }
 
     GI->LoadImage("bullet.png");
 

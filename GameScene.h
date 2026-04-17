@@ -2,6 +2,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "StaticMapActor.h"
+#include <vector>
 
 class GameScene : public Scene
 {
@@ -22,4 +23,6 @@ public:
     Player* GetPlayer() const { return player; }
 
     Player* player = nullptr;
+
+    std::vector<Vector2> grenadePickupPositions;
 };

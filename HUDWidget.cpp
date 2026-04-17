@@ -32,17 +32,18 @@ void HUDWidget::Render()
 {
     auto GI = myScene->GI;
 
-    float hudHeight = 200;
+    int x = Parameters::screenWidth * 0.253f;
+    int y = Parameters::screenHeight * 0.66f;
+
+    float hudHeight = 1000;
     GI->DrawRectScreen(
         0,
-        Parameters::screenHeight - hudHeight,
+        y - 20,
         Parameters::screenWidth,
         hudHeight,
         0, 0, 0
     );
 
-    int x = 50;
-    int y = Parameters::screenHeight - 160; // parte inferior
 
     // SCORE
     std::string scoreStr = "SCORE " + Pad(gameScene->score, 6);
