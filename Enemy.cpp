@@ -7,7 +7,6 @@
 #include "Game.h"
 #include "Parameters.h"
 #include "AnimatedEntity.h"
-#include "AnimationsPlayer.h"
 #include "AnimationsEnemy.h"
 
 template<typename T>
@@ -105,6 +104,14 @@ void Enemy::Update(float dt)
 {
     AnimatedEntity::Update(dt);
 
+    if (dying)
+    {
+        if (currentAnimation->finished)
+            myScene->DestroyActor(this);
+
+        return;
+    }
+
     stateTimer -= dt;
 
     switch (state)
@@ -138,6 +145,7 @@ void Enemy::Update(float dt)
 
 void Enemy::UpdateMoving(float dt)
 {
+
     // Si no se mueve  idle
     float len2 = moveDir.x * moveDir.x + moveDir.y * moveDir.y;
     if (len2 < 0.0001f)
@@ -253,10 +261,16 @@ void Enemy::ChooseNewDirection()
 
 void Enemy::TakeDamage(int dmg)
 {
+    if (isDead)
+        return;
+
     health -= dmg;
     if (health <= 0)
     {
         ((GameScene*)myScene)->AddScore(100);
-        myScene->DestroyActor(this);
+        isDead = true;
+        dying = true;
+        deathTimer = 1.f;
+        SetAnimation("death");
     }
 }

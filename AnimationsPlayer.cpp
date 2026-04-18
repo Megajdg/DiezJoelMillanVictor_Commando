@@ -12,7 +12,7 @@ AnimationSet LoadPlayerAnimations()
     float startY = 11;
 
     float sepX = 6;
-    float sepY[4] = { 3, 3, 3, 3 };
+    float sepY[4] = { 3, 3, 12, 3 };
 
     auto rowY = [&](int row)
         {
@@ -49,7 +49,7 @@ AnimationSet LoadPlayerAnimations()
     AddAnim("run_diag_back_right", 2, 8, 11);
 
     // THROW
-    AddAnim("throw", 3, 0, 2, 0.12f);
+    AddAnim("throw", 3, 0, 2, 0.09f, false);
 
     // DEATH
     {

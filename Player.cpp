@@ -65,11 +65,6 @@ T Clamp(const T& value, const T& minVal, const T& maxVal)
     return value;
 }
 
-//Player::Player(Scene* myscene, std::string img_name, float side_size) : Sprite(myscene, img_name, Vector2(side_size, side_size))
-//{
-//	Game::camera.target = this;
-//	weapon = new GunWeapon();
-//}
 Player::Player(Scene* myscene, std::string img_name, float side_size)
     : AnimatedEntity(myscene, img_name, Transform(), Vector2(side_size, side_size))
 {
@@ -164,6 +159,7 @@ void Player::UpdateMovement(float deltaTime)
             isThrowing = false;
             SetAnimation(IdleFromRun(lastMoveAnim));
         }
+        return;
     }
 
     if (dir.x != 0 || dir.y != 0)

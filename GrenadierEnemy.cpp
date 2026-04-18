@@ -21,6 +21,7 @@ void GrenadierEnemy::ShootAtPlayer()
 void GrenadierEnemy::ThrowGrenade()
 {
     if (!target) return;
+    SetAnimation("throw");
 
     // Dirección real hacia el jugador
     Vector2 realDir = target->transform.position - transform.position;

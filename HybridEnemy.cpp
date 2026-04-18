@@ -59,6 +59,8 @@ void HybridEnemy::ShootBullet()
 void HybridEnemy::ThrowGrenade()
 {
     Vector2 realDir = (target->transform.position - transform.position).normalize();
+    SetAnimation("throw");
+
 
     static Vector2 dirs[8] = {
         {  1,  0 }, {  1,  1 }, {  0,  1 }, { -1,  1 },

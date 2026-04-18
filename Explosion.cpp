@@ -3,11 +3,17 @@
 #include "MyPhysics.h"
 #include "Enemy.h"
 #include "CircleCollider.h"
+#include "AnimatedEntity.h"
+#include "AnimationProjectile.h"
 
-Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : Sprite(scene, "explosion.png", t, Vector2(50, 50))
+
+Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : AnimatedEntity(scene, "projectiles.png", t, Vector2(100, 100))
 {
     this->fromEnemy = fromEnemy;
     scene->AddActor(this);
+
+    animationSet = LoadProjectileAnimations();
+    SetAnimation("explosion");
 
     CircleCollider* col = new CircleCollider();
     col->radius = radius;

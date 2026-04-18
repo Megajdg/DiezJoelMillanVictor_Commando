@@ -1,7 +1,7 @@
 #pragma once
-#include "Sprite.h"
+#include "AnimatedEntity.h"
 
-class Explosion : public Sprite
+class Explosion : public AnimatedEntity
 {
 public:
     float timer = 0.f;

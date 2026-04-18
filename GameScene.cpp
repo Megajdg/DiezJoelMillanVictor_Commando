@@ -29,6 +29,7 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
     GI->LoadImage("Grenadier.png");
     GI->LoadImage("Hybrid.png");
     GI->LoadImage("player_spritesheet_final.png");
+    GI->LoadImage("projectiles.png");
     Transform t;
     t.position = Vector2(0, -200);
     player = new Player(this, "player_spritesheet_final.png", t, 100);

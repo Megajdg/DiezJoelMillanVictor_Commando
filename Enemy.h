@@ -35,4 +35,8 @@ public:
     void UpdateShooting(float dt);
     void ChooseNewDirection();
     void TakeDamage(int dmg);
+
+    bool isDead = false;
+    bool dying = false;
+    float deathTimer = 0.f;
 };
