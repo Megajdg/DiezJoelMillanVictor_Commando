@@ -20,6 +20,7 @@ public:
 	static int currentScore;
 	
 	static int LoadHighScore();
+	static void SaveHighScore(int score);
 
 	static void ChangeScene(Scene* newScene);
 	static void SavePlayerState(Player* p);
@@ -28,6 +29,10 @@ public:
 	static void OnGameOver();
 	static Game* instance;
 	Scene* currentScene;
+
+	static bool newHS;
+	static int nextExtraLifeScore;
+
 private:
 	
 	static float DeltaTime;
@@ -45,7 +50,6 @@ private:
 	void Update(float deltaTime);
 	void Render();
 	void UpdateInputs();
-	void SaveHighScore(int score);
 
 	static bool pendingRespawn;
 	static int pendingLives;

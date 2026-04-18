@@ -1,6 +1,7 @@
 #include "GrenadierEnemy.h"
 #include "Grenade.h"
 #include "Scene.h"
+#include "AudioManager.h"
 
 GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
     : Enemy(scene, t, target)   // reutilizamos la IA base
@@ -23,6 +24,8 @@ void GrenadierEnemy::ShootAtPlayer()
 void GrenadierEnemy::ThrowGrenade()
 {
     if (!target) return;
+
+    AudioManager::instance().playSFX("grenade.wav");
 
     // Dirección real hacia el jugador
     Vector2 realDir = target->transform.position - transform.position;

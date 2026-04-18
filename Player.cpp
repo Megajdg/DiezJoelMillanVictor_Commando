@@ -7,7 +7,7 @@
 #include "Parameters.h"
 #include "AnimatedEntity.h"
 #include "AnimationsPlayer.h"
-
+#include "AudioManager.h"
 
 static std::string DirectionToAnimation(float angle)
 {
@@ -98,15 +98,23 @@ void Player::Update(float deltaTime)
     // Limitar X
     transform.position.x = Clamp(transform.position.x, mapLeft, mapRight);
 
-    float hudHeight = 450;
-    float limitBottom = Game::camera.position.y + Parameters::screenHeight * 0.66f - hudHeight;
-
     // Limitar Y dentro del mapa
     transform.position.y = Clamp(transform.position.y, mapTop, mapBottom);
 
-    // Límite inferior real
-    if (transform.position.y > limitBottom)
-        transform.position.y = limitBottom;
+    // Convertir posición del jugador a pantalla
+    float playerScreenY = transform.position.y - Game::camera.position.y + Parameters::screenHeight * 0.5f;
+
+    // Top del HUD en pantalla
+    float hudTopScreen = Parameters::screenHeight * 0.66f - 70;
+
+    // Si el jugador entra en el HUD, lo empujamos hacia arriba
+    if (playerScreenY > hudTopScreen)
+    {
+        float delta = playerScreenY - hudTopScreen;
+
+        // Convertimos el empuje a coordenadas del mundo
+        transform.position.y -= delta;
+    }
 }
 
 void Player::UpdateMovement(float deltaTime)
@@ -183,6 +191,7 @@ void Player::UpdateMovement(float deltaTime)
     // Disparo
     if (Game::keyDown[SDLK_SPACE])
     {
+        AudioManager::instance().playSFX("shoot.wav");
         Game::keyDown[SDLK_SPACE] = false;
 
         Transform shot;
@@ -195,6 +204,7 @@ void Player::UpdateMovement(float deltaTime)
 
     if (Game::keyDown[SDLK_G] && !grenadeActive)
     {
+        AudioManager::instance().playSFX("grenade.wav");
         Game::keyDown[SDLK_G] = false;
 
         Transform t;
@@ -220,11 +230,14 @@ void Player::TakeDamage(int dmg)
     if (isDead)
         return;
 
+    AudioManager::instance().playSFX("hit.wav");
+
     lives--;
 
     isDead = true;
     dying = true;
     deathTimer = 2.0f;
     SetAnimation("death");
+    AudioManager::instance().playSFX("death.wav");
 }
 

@@ -160,6 +160,52 @@ int GraphicsInterface::PrintText(std::string text, int x, int y, bColor color, E
 	return dstrect.x;
 }
 
+Vector2 GraphicsInterface::MeasureText(const std::string& text, EFONT_SIZE fontsize)
+{
+	int font_size{};
+	switch (fontsize)
+	{
+	case EFONT_SIZE::BIG:
+		font_size = Parameters::bigFontSize;
+		break;
+	case EFONT_SIZE::MEDIUM:
+		font_size = Parameters::mediumFontSize;
+		break;
+	case EFONT_SIZE::SMALL:
+		font_size = Parameters::smallFontSize;
+		break;
+	default:
+		font_size = Parameters::bigFontSize;
+		break;
+	}
+
+	float fontScale = (1.f * font_size) / Parameters::bigFontSize;
+
+	float x = 0.0f;
+	float maxH = 0.0f;
+
+	for (int i = 0; i < (int)text.size(); i++)
+	{
+		char c = text.at(i);
+		auto it = glyphs.find(c);
+		if (it != glyphs.end())
+		{
+			Glyph* g = it->second;
+			float w = g->width * fontScale;
+			float h = g->height * fontScale;
+
+			x += std::min((int)w, font_size);
+			if (h > maxH) maxH = h;
+		}
+		else
+		{
+			x += font_size;
+		}
+	}
+
+	return Vector2(x, maxH);
+}
+
 GraphicsInterface::~GraphicsInterface()
 {
 	for (auto pair : image_collection)

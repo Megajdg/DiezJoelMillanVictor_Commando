@@ -3,11 +3,13 @@
 #include "MyPhysics.h"
 #include "Enemy.h"
 #include "CircleCollider.h"
+#include "AudioManager.h"
 
 Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : Sprite(scene, "explosion.png", t, Vector2(50, 50))
 {
     this->fromEnemy = fromEnemy;
     scene->AddActor(this);
+    AudioManager::instance().playSFX("explosion.wav");
 
     CircleCollider* col = new CircleCollider();
     col->radius = radius;

@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include "Parameters.h"
 
 void Camera::Update()
 {
@@ -15,4 +16,10 @@ void Camera::Update()
     if (targetY < position.y) {
         position.y = position.y * 0.9f + targetY * 0.1f;
     }
+
+    float mapHeight = 6232.0f;
+    float topLimit = -mapHeight + (Parameters::screenHeight * 0.5f);
+
+    if (position.y < topLimit)
+        position.y = topLimit;
 }

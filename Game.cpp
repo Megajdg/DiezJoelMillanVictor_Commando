@@ -9,6 +9,7 @@
 #include "GameScene.h"
 #include <fstream>
 #include "GameOverScene.h"
+#include "AudioManager.h"
 
 Game* Game::instance = 0;
 std::map<int, bool> Game::keyDown;
@@ -20,6 +21,8 @@ int Game::pendingGrenades = 0;
 bool Game::pendingGameOver = false;
 int Game::currentScore = 0;
 int Game::pendingArea = 1;
+bool Game::newHS = false;
+int Game::nextExtraLifeScore = 10000;
 
 void Game::Create()
 {
@@ -93,6 +96,7 @@ Game::Game()
 	GI = new GraphicsInterface();
 	mph = new MyPhysics();
 
+	AudioManager::instance().init();
 	currentScene = new MenuScene(GI, mph);
 }
 
@@ -100,6 +104,7 @@ Game::~Game()
 {
 	delete GI;
 	delete mph;
+	AudioManager::instance().close();
 }
 
 void Game::UpdateInputs()
@@ -139,6 +144,7 @@ int Game::LoadHighScore()
 
 void Game::SaveHighScore(int score)
 {
+	newHS = true;
 	std::ofstream f("highscore.txt");
 	if (f.is_open())
 		f << score;

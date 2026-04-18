@@ -8,6 +8,7 @@
 #include "Parameters.h"
 #include "AnimatedEntity.h"
 #include "AnimationsEnemy.h"
+#include "AudioManager.h"
 
 template<typename T>
 T Clamp(const T& value, const T& minVal, const T& maxVal)
@@ -78,15 +79,23 @@ void Enemy::Update(float dt)
 
     float mapLeft = -1272 * 0.5f + 50;
     float mapRight = 1272 * 0.5f - 50;
+    float mapTop = -6232 + 50;
+    float mapBottom = 0;
 
     // Limitar X
     transform.position.x = Clamp(transform.position.x, mapLeft, mapRight);
 
-    float hudHeight = 200;
-    float limitBottom = Game::camera.position.y + Parameters::screenHeight * 0.5f - hudHeight + 100;
+    // Limitar Y dentro del mapa
+    transform.position.y = Clamp(transform.position.y, mapTop, mapBottom);
 
-    // Si el enemigo sale por debajo de la pantalla destruir
-    if (transform.position.y > limitBottom)
+    // Convertir posición del enemigo a pantalla
+    float enemyScreenY = transform.position.y - Game::camera.position.y + Parameters::screenHeight * 0.5f;
+
+    // Top del HUD en pantalla
+    float hudTopScreen = Parameters::screenHeight * 0.66f + 30;
+
+    // Si el enemigo entra en el HUD, lo destruimos
+    if (enemyScreenY > hudTopScreen)
     {
         myScene->DestroyActor(this);
         return;
@@ -195,6 +204,7 @@ void Enemy::TakeDamage(int dmg)
     health -= dmg;
     if (health <= 0)
     {
+        AudioManager::instance().playSFX("hit.wav");
         ((GameScene*)myScene)->AddScore(100);
         myScene->DestroyActor(this);
     }

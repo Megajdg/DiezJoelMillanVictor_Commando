@@ -6,9 +6,12 @@
 #include "HelpScene.h"
 #include "CreditsScene.h"
 #include "GameScene.h"
+#include "AudioManager.h"
 
 MenuScene::MenuScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 {
+    Game::nextExtraLifeScore = 10000;
+    AudioManager::instance().playMusic("maintheme.mp3");
 }
 
 void MenuScene::Update(float dt)

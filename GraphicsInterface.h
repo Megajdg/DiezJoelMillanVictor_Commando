@@ -75,5 +75,7 @@ public:
 
 	int PrintText(std::string text, int x, int y, bColor color, EFONT_SIZE fontsize);
 	int PrintText(std::string text, int x, int y, bColor color, EFONT_SIZE fontsize, bool grenade);
+
+	Vector2 MeasureText(const std::string& text, EFONT_SIZE size);
 };
 

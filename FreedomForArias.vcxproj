@@ -105,14 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\include;$(ProjectDir)SDL\SDL3_image-3.2.6\include;$(ProjectDir)SDL\SDL3-3.4.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\include;$(ProjectDir)SDL\SDL3_image-3.2.6\include;$(ProjectDir)SDL\SDL3-3.4.0\include;$(ProjectDir)SDL\SDL3_mixer-3.2.0\include</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\lib\x64;$(ProjectDir)\SDL\SDL3_image-3.2.6\lib\x64;$(ProjectDir)SDL\SDL3-3.4.0\lib\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;SDL3_ttf.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\lib\x64;$(ProjectDir)\SDL\SDL3_image-3.2.6\lib\x64;$(ProjectDir)SDL\SDL3-3.4.0\lib\x64;$(ProjectDir)SDL\SDL3_mixer-3.2.0\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;SDL3_ttf.lib;SDL3_mixer.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,6 +139,7 @@
     <ClCompile Include="AnimationSet.cpp" />
     <ClCompile Include="AnimationsPlayer.cpp" />
     <ClCompile Include="AreaCompleteScene.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="StaticMapActor.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="VictoryScene.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
@@ -182,6 +184,7 @@
     <ClInclude Include="AnimationSet.h" />
     <ClInclude Include="AnimationsPlayer.h" />
     <ClInclude Include="AreaCompleteScene.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CircleCollider.h" />
@@ -213,6 +216,7 @@
     <ClInclude Include="StaticMapActor.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="VictoryScene.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>

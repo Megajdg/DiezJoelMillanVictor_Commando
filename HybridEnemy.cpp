@@ -1,7 +1,8 @@
 #include "HybridEnemy.h"
 #include "Bullet.h"
 #include "Grenade.h"
-#include <cstdlib> // rand()
+#include <cstdlib>
+#include "AudioManager.h"
 
 HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target)
 {
@@ -25,6 +26,8 @@ void HybridEnemy::ShootAtPlayer()
 
 void HybridEnemy::ShootBullet()
 {
+    AudioManager::instance().playSFX("shoot.wav");
+
     // Dirección hacia el jugador
     Vector2 realDir = (target->transform.position - transform.position).normalize();
 
@@ -58,6 +61,8 @@ void HybridEnemy::ShootBullet()
 
 void HybridEnemy::ThrowGrenade()
 {
+    AudioManager::instance().playSFX("grenade.wav");
+
     Vector2 realDir = (target->transform.position - transform.position).normalize();
 
     static Vector2 dirs[8] = {

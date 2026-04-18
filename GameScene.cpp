@@ -12,9 +12,12 @@
 #include "HUDWidget.h"
 #include "GrenadePowerup.h"
 #include "AreaCompleteScene.h"
+#include "AudioManager.h"
 
 GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Scene(GI, mph), area(areaNumber)
 {
+    AudioManager::instance().playMusic("maintheme.mp3");
+
     std::string mapImage;
     std::string collisionMask;
 
@@ -119,7 +122,7 @@ void GameScene::Update(float dt)
     Scene::Update(dt);
 
     // Si el jugador llega al final del mapa
-    if (player->transform.position.y < -6000)
+    if (player->transform.position.y < -6100)
     {
         Game::SavePlayerState(player);
         Game::ChangeScene(new AreaCompleteScene(GI, mph, area));
@@ -131,6 +134,14 @@ void GameScene::Render()
 {
     GI->ClearScreen(0, 0, 20); // azul oscuro
     Scene::Render();
+
+    if (score >= Game::nextExtraLifeScore)
+    {
+        player->lives++;
+
+        // Preparar el siguiente umbral
+        Game::nextExtraLifeScore += 10000;
+    }
 }
 
 void GameScene::AddScore(int amount)

@@ -1,5 +1,6 @@
 #include "ShooterEnemy.h"
 #include "Bullet.h"
+#include "AudioManager.h"
 
 ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
     : Enemy(scene, t, target)
@@ -17,6 +18,8 @@ void ShooterEnemy::Update(float dt)
 void ShooterEnemy::ShootAtPlayer()
 {
     if (!target) return;
+
+    AudioManager::instance().playSFX("shoot.wav");
 
     // Dirección cardinal más cercana
     Vector2 realDir = target->transform.position - transform.position;
