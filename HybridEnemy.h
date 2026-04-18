@@ -13,7 +13,6 @@ private:
     float attackCooldown = 2.0f; // cada 2 segundos
 
     void ShootAtPlayer() override;
-    void DoRandomAttack();
     void ShootBullet();
     void ThrowGrenade();
 };

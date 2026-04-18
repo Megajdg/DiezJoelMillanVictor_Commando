@@ -1,9 +1,12 @@
 #include "AnimationSet.h"
 #include "Animation.h"
-#include "AnimationProjectile.h"
+#include "AnimationPowerUp.h"
 
-AnimationSet LoadProjectileAnimations()
+
+
+AnimationSet LoadPowerUpAnimations()
 {
+
     AnimationSet set;
 
     float frameW = 26;
@@ -12,7 +15,7 @@ AnimationSet LoadProjectileAnimations()
     float startX = 2;
     float startY = 2;
 
-    float sepX = 3;
+    float sepX = 4;
     float sepY = 0;
 
     auto AddAnim = [&](const std::string& name, int row, int colStart, int colEnd, float frameTime = 0.08f, bool loop = true)
@@ -34,10 +37,8 @@ AnimationSet LoadProjectileAnimations()
         };
 
 
-    AddAnim("bullet",       0, 0, 0, 0.2f);
-    AddAnim("bullet_hit",   0, 1, 3, 0.05f, false);
-    AddAnim("grenade",      0, 4, 6, 0.2f);
-    AddAnim("explosion",    0, 7, 9, 0.2f, false);
+    AddAnim("grenadePU", 0, 0, 1, 0.2f);
+
 
     return set;
 }

@@ -135,6 +135,7 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="AnimatedEntity.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationPowerUp.cpp" />
     <ClCompile Include="AnimationProjectile.cpp" />
     <ClCompile Include="AnimationsEnemy.cpp" />
     <ClCompile Include="AnimationSet.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="AnimatedEntity.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationPowerUp.h" />
     <ClInclude Include="AnimationProjectile.h" />
     <ClInclude Include="AnimationsEnemy.h" />
     <ClInclude Include="AnimationSet.h" />

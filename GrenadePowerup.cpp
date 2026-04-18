@@ -2,10 +2,16 @@
 #include "Player.h"
 #include "Scene.h"
 #include "MyPhysics.h"
+#include "AnimatedEntity.h"
+#include "AnimationPowerUp.h"
 
-GrenadePowerup::GrenadePowerup(Scene* scene, const Vector2& pos) : Sprite(scene, "grenade_powerup.png", pos, Vector2(60, 60))
+GrenadePowerup::GrenadePowerup(Scene* scene, const Vector2& pos) : AnimatedEntity(scene, "powerUpGrenade.png", pos, Vector2(60, 60))
 {
-    transform.position = pos;
+
+    animationSet = LoadPowerUpAnimations();
+    SetAnimation("grenadePU");
+
+    scene->AddActor(this);
 
     // Collider tipo trigger
     CircleCollider* col = new CircleCollider();
@@ -13,7 +19,11 @@ GrenadePowerup::GrenadePowerup(Scene* scene, const Vector2& pos) : Sprite(scene,
     col->isTrigger = true;
 
     scene->mph->AddCollider(col, this);
-    scene->AddActor(this);
+}
+
+void GrenadePowerup::Update(float dt)
+{
+    AnimatedEntity::Update(dt);
 }
 
 void GrenadePowerup::OnTrigger(Actor* other)

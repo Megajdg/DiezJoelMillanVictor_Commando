@@ -4,7 +4,7 @@
 
 class Player;
 
-class Grenade : public Sprite
+class Grenade : public AnimatedEntity
 {
 public:
     Grenade(Scene* scene, const Transform& t, Vector2 direction, Player* owner, bool fromEnemy = false);

@@ -7,7 +7,8 @@
 #include "AnimationProjectile.h"
 
 
-Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : AnimatedEntity(scene, "projectiles.png", t, Vector2(100, 100))
+Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) 
+    : AnimatedEntity(scene, "projectiles.png", t, Vector2(100, 100))
 {
     this->fromEnemy = fromEnemy;
     scene->AddActor(this);
@@ -23,11 +24,11 @@ Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : Animate
 
 void Explosion::Update(float dt)
 {
-    timer += dt;
-    if (!dying && timer >= duration) {
-        dying = true;
+    AnimatedEntity::Update(dt);
+
+    //cuando termina la animacion se destruye
+    if (currentAnimation->finished)
         myScene->DestroyActor(this);
-    }
 }
 
 void Explosion::OnTrigger(Actor* other)
