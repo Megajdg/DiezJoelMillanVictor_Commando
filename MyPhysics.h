@@ -4,7 +4,7 @@
 #include <map>
 #include "Vector2.h"
 
-#define DEBUG_COLLIDERS
+//#define DEBUG_COLLIDERS
 
 typedef std::map<class Actor*, std::vector<class Collider*>*> ColliderMap;
 
@@ -27,8 +27,6 @@ class MyPhysics
 	HIT_INFO IsCollidingCircleCircle(class Collider* col1, class Actor* a1, class Collider* col2, class Actor* a2);
 	HIT_INFO IsCollidingRectangleRectangle(class Collider* col1, class Actor* a1, class Collider* col2, class Actor* a2);
 
-
-
 public:
 	void RemoveActor(class Actor*);
 	void AddCollider(class Collider* col, class Actor* act);
@@ -39,4 +37,3 @@ public:
 	friend class Game;
 
 };
-

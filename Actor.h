@@ -7,7 +7,7 @@ class Actor
 {
 public:
 	class Scene* myScene;
-	bool isStatic{};
+	bool isStatic = false;
 	float mass = 1.f;
 
 	Actor(class Scene* myScene);

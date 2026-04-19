@@ -18,6 +18,32 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Sc
 {
     AudioManager::instance().playMusic("maintheme.mp3");
 
+    // Player
+    GI->LoadImage("Enemy.png");
+    GI->LoadImage("Shooter.png");
+    GI->LoadImage("Grenadier.png");
+    GI->LoadImage("Hybrid.png");
+    GI->LoadImage("player_spritesheet_final.png");
+    GI->LoadImage("projectiles.png");
+    GI->LoadImage("powerUpGrenade.png");
+    Transform t;
+    t.position = Vector2(0, -200);
+    player = new Player(this, "player_spritesheet_final.png", t, 100);
+    actors.push_back(player);
+
+    Game::camera.position = player->transform.position;
+    Game::camera.target = player;
+
+    CircleCollider* col = new CircleCollider();
+    col->radius = 30;
+    mph->AddCollider(col, player);
+
+    new HUDWidget(this, player);
+
+    new EnemySpawner(this);
+
+    GI->LoadImage("grenade_powerup.png");
+
     std::string mapImage;
     std::string collisionMask;
 
@@ -48,32 +74,6 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Sc
 
     GenerateColliders(mapImage, collisionMask);
 
-    // Player
-    GI->LoadImage("Enemy.png");
-    GI->LoadImage("Shooter.png");
-    GI->LoadImage("Grenadier.png");
-    GI->LoadImage("Hybrid.png");
-    GI->LoadImage("player_spritesheet_final.png");
-    GI->LoadImage("projectiles.png");
-    GI->LoadImage("powerUpGrenade.png");
-    Transform t;
-    t.position = Vector2(0, -200);
-    player = new Player(this, "player_spritesheet_final.png", t, 100);
-    actors.push_back(player);
-
-    Game::camera.position = player->transform.position;
-    Game::camera.target = player;
-
-    CircleCollider* col = new CircleCollider();
-    col->radius = 30;
-    mph->AddCollider(col, player);
-
-    new HUDWidget(this, player);
-
-    new EnemySpawner(this);
-
-    GI->LoadImage("grenade_powerup.png");
-
     switch (area)
     {
     case 1:
@@ -88,21 +88,20 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Sc
 
     case 2:
         grenadePickupPositions = {
-            {  200, -1500 },
-            { -300, -2800 },
-            {  500, -4200 }
+            {  -500, -1000 },
+            { 500, -2000 },
+            {  250, -2500 }
         };
         break;
 
     case 3:
         grenadePickupPositions = {
-            { -200, -1800 },
-            {  350, -3500 },
-            { -450, -5200 }
+            { -400, -1800 },
+            {  400, -3700 },
+            {  400, -5400 }
         };
         break;
     }
-
 
     for (auto& pos : grenadePickupPositions)
     {

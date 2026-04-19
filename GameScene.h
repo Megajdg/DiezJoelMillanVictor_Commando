@@ -27,4 +27,6 @@ public:
     Player* player = nullptr;
 
     std::vector<Vector2> grenadePickupPositions;
+
+    bool firstFrame = true;
 };

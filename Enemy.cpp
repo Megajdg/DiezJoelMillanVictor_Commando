@@ -97,6 +97,11 @@ Enemy::Enemy(Scene* scene, const Transform& t, Player* target, const std::string
     else if (pos.y < mapTop) moveDir = Vector2(0, 1);
     else if (pos.y > mapBottom) moveDir = Vector2(0, -1);
 
+    if (moveDir.x == 0.f && moveDir.y == 0.f)
+    {
+        ChooseNewDirection();
+    }
+
     state = EnemyState::MOVING;
     stateTimer = 0.5f + (rand() % 1000) / 1000.f;
 }
@@ -154,6 +159,13 @@ void Enemy::Update(float dt)
 
 void Enemy::UpdateMoving(float dt)
 {
+    // Si acabó el tiempo de movimiento pasar a disparar
+    if (stateTimer <= 0.f)
+    {
+        state = EnemyState::SHOOTING;
+        stateTimer = 0.3f + (rand() % 300) / 1000.f;
+        return;
+    }
 
     // Si no se mueve  idle
     float len2 = moveDir.x * moveDir.x + moveDir.y * moveDir.y;
@@ -161,14 +173,6 @@ void Enemy::UpdateMoving(float dt)
     {
         float angle = transform.rotation + 90.f;
         SetAnimation(DirectionToIdle(angle));
-        return;
-    }
-
-    // Si acabó el tiempo de movimiento  pasar a disparar
-    if (stateTimer <= 0.f)
-    {
-        state = EnemyState::SHOOTING;
-        stateTimer = 0.3f + (rand() % 300) / 1000.f;
         return;
     }
 

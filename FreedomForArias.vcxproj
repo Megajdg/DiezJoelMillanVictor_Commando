@@ -123,12 +123,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\include;$(ProjectDir)SDL\SDL3_image-3.2.6\include;$(ProjectDir)SDL\SDL3-3.4.0\include;$(ProjectDir)SDL\SDL3_mixer-3.2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL\SDL3_ttf-3.2.2\lib\x64;$(ProjectDir)\SDL\SDL3_image-3.2.6\lib\x64;$(ProjectDir)SDL\SDL3-3.4.0\lib\x64;$(ProjectDir)SDL\SDL3_mixer-3.2.0\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;SDL3_ttf.lib;SDL3_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
