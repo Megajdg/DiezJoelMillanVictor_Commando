@@ -10,6 +10,10 @@
 #include "AnimationsEnemy.h"
 #include "AudioManager.h"
 
+
+/// <summary>
+/// Helper para hacer clamp entre un minimo y un maximo
+/// </summary>
 template<typename T>
 T Clamp(const T& value, const T& minVal, const T& maxVal)
 {
@@ -18,6 +22,7 @@ T Clamp(const T& value, const T& minVal, const T& maxVal)
     return value;
 }
 
+// Funcion auxiliar que convierte un angulo en una animacion en movimiento, divide el circulo en 8
 static std::string DirectionToAnimation(float angle)
 {
     while (angle < 0) angle += 360;
@@ -47,6 +52,7 @@ static std::string DirectionToAnimation(float angle)
     return "run_diag_front_left";
 }
 
+// Convierte la animacion de idle correspondiente a la animacion de movimiento
 static std::string DirectionToIdle(float angle)
 {
     while (angle < 0) angle += 360;
@@ -69,17 +75,15 @@ static std::string DirectionToIdle(float angle)
 }
 
 
-Enemy::Enemy(Scene* scene, const Transform& t, Player* target, const std::string& spritesheet)
-    : AnimatedEntity(scene, spritesheet, t, Vector2(100, 100))
+Enemy::Enemy(Scene* scene, const Transform& t, Player* target, const std::string& spritesheet) : AnimatedEntity(scene, spritesheet, t, Vector2(100, 100))
 {
-
     this->target = target;
     scene->AddActor(this);
 
     animationSet = LoadEnemyAnimations();
     SetAnimation("idle_front");
 
-    // Collider
+    // Collider circular para colisiones
     CircleCollider* col = new CircleCollider();
     col->radius = 30;
     scene->mph->AddCollider(col, this);
@@ -92,24 +96,28 @@ Enemy::Enemy(Scene* scene, const Transform& t, Player* target, const std::string
 
     Vector2 pos = transform.position;
 
+    // Si aparece feura de limites, empujarlo hacia dentro
     if (pos.x < mapLeft) moveDir = Vector2(1, 0);
     else if (pos.x > mapRight) moveDir = Vector2(-1, 0);
     else if (pos.y < mapTop) moveDir = Vector2(0, 1);
     else if (pos.y > mapBottom) moveDir = Vector2(0, -1);
 
+    // Si esta dentro del mapa, elegir direccion aleatoria valida
     if (moveDir.x == 0.f && moveDir.y == 0.f)
     {
         ChooseNewDirection();
     }
 
+    // Esado inicial, moviendose
     state = EnemyState::MOVING;
     stateTimer = 0.5f + (rand() % 1000) / 1000.f;
 }
 
 void Enemy::Update(float dt)
 {
-    AnimatedEntity::Update(dt);
+    AnimatedEntity::Update(dt); // Avanzamos animaciones
 
+    // Si esta muriendo, esperar animacion y destruir
     if (dying)
     {
         if (currentAnimation->finished)
@@ -118,6 +126,7 @@ void Enemy::Update(float dt)
         return;
     }
 
+    // Avanzar temporizador del estado
     stateTimer -= dt;
 
     switch (state)
@@ -132,6 +141,7 @@ void Enemy::Update(float dt)
         break;
     }
 
+    // Limitar dentro del mapa
     float mapLeft = -1272 * 0.5f + 50;
     float mapRight = 1272 * 0.5f - 50;
     float mapTop = -6232 + 50;
@@ -159,7 +169,7 @@ void Enemy::Update(float dt)
 
 void Enemy::UpdateMoving(float dt)
 {
-    // Si acabó el tiempo de movimiento pasar a disparar
+    // Si acabo el tiempo de movimiento pasar a disparar
     if (stateTimer <= 0.f)
     {
         state = EnemyState::SHOOTING;
@@ -167,7 +177,7 @@ void Enemy::UpdateMoving(float dt)
         return;
     }
 
-    // Si no se mueve  idle
+    // Si no se mueve, idle
     float len2 = moveDir.x * moveDir.x + moveDir.y * moveDir.y;
     if (len2 < 0.0001f)
     {
@@ -176,20 +186,21 @@ void Enemy::UpdateMoving(float dt)
         return;
     }
 
-    // Mover
+    // Mover enemigo
     transform.position += moveDir * speed * dt;
     transform.rotation = atan2(moveDir.y, moveDir.x) * 180.f / 3.14159f;
 
-    // Animación de run según dirección
+    // Animación de run segun direccion
     float angle = transform.rotation + 90.f;
     SetAnimation(DirectionToAnimation(angle));
 }
 
 void Enemy::UpdateShooting(float dt)
 {
+    // Si ha terminado estado vuelve a moverse
     if (stateTimer <= 0.f)
     {
-        // Elegir nueva dirección de movimiento
+        // Elegir nueva direccion de movimiento
         ChooseNewDirection();
 
         state = EnemyState::MOVING;
@@ -205,6 +216,7 @@ void Enemy::UpdateShooting(float dt)
         return;
     }
 
+    // Mirar hacia el jugador mientras dispara
     Vector2 dir = (target->transform.position - transform.position).normalize();
     float angle = atan2(dir.y, dir.x) * 180.f / 3.14159f + 90.f;
 
@@ -225,13 +237,13 @@ void Enemy::ChooseNewDirection()
 
     Vector2 pos = transform.position;
 
-    // Lista de direcciones válidas
+    // Lista de direcciones validas
     std::vector<Vector2> validDirs;
 
     for (int i = 0; i < 8; i++)
     {
         Vector2 d = dirs[i].normalize();
-        Vector2 nextPos = pos + d * 50.f; // mirar un poco hacia adelante
+        Vector2 nextPos = pos + d * 50.f; // Mirar un poco hacia adelante
 
         bool inside =
             nextPos.x > mapLeft &&
@@ -243,7 +255,7 @@ void Enemy::ChooseNewDirection()
             validDirs.push_back(d);
     }
 
-    // Si hay direcciones válidas, elegir una aleatoria
+    // Si hay direcciones validas, elegir una aleatoria
     if (!validDirs.empty())
     {
         int i = rand() % validDirs.size();
@@ -251,8 +263,8 @@ void Enemy::ChooseNewDirection()
         return;
     }
 
-    // Si no hay válidas (muy raro), elegir la que más acerque al centro del mapa
-    Vector2 center(0, -3116); // centro del mapa
+    // Si no hay validas (muy raro), elegir la que mas se acerque al centro del mapa
+    Vector2 center(0, -3116); // Centro del mapa
     Vector2 bestDir;
     float bestDot = -9999.f;
 
@@ -275,17 +287,23 @@ void Enemy::ChooseNewDirection()
 
 void Enemy::TakeDamage(int dmg)
 {
+
+    // Si el enemigo ya esta marcado como muerto ignora el resto, evitamos reproducir animaciones o sonidos repetidos
     if (isDead)
         return;
 
+    // Reducimos vidas si es 0 
     health -= dmg;
     if (health <= 0)
     {
+        // Sonido de muerte
         AudioManager::instance().PlaySFX("hit.wav");
         ((GameScene*)myScene)->AddScore(100);
-        isDead = true;
+        isDead = true;     // Marca al enemigo como muerto
+
+        // Activa muriendo y se espera un tiempo antes de despawnear
         dying = true;
         deathTimer = 1.f;
-        SetAnimation("death");
+        SetAnimation("death"); // Animacion de muerte
     }
 }

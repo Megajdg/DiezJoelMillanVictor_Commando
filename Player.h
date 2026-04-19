@@ -17,18 +17,18 @@ public:
 	int lives = 5;																		// Vidas jugador
 	int grenades = 5;																	// Granadas jugador
 
-	virtual void Update(float deltaTime);												// 
-	bool grenadeActive = false;															// 
-	void TakeDamage(int dmg);															// 
+	virtual void Update(float deltaTime);	
+	bool grenadeActive = false;				
+	void TakeDamage(int dmg);				
 
 private:
-	void UpdateMovement(float deltaTime);												// 
-	std::string lastMoveAnim = "run_front";												// 
-	float linear_speed = 300.f;															// 
-	float ang_speed = 100.f;															// 
-	Weapon* weapon = nullptr;															// 
-	bool isThrowing = false;															// 
-	bool isDead = false;																// 
-	bool dying = false;																	// 
-	float deathTimer = 0.f;																// 
+	void UpdateMovement(float deltaTime);	
+	std::string lastMoveAnim = "run_front";	
+	float linear_speed = 300.f;				
+	float ang_speed = 100.f;				
+	Weapon* weapon = nullptr;				
+	bool isThrowing = false;				
+	bool isDead = false;					
+	bool dying = false;						
+	float deathTimer = 0.f;					
 };

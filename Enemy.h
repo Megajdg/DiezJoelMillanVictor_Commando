@@ -2,26 +2,34 @@
 #include "Sprite.h"
 #include "Player.h"
 
+// Forward declaration al Player
 class Player;
 
+/// <summary>
+/// Define posible estados del enemigo
+/// </summary>
 enum class EnemyState
 {
     MOVING,
     SHOOTING
 };
 
+/// <summary>
+/// Clase base para los enemigos, controla movimiento, IA, animaciones, disparo y muerte
+/// </summary>
 class Enemy : public AnimatedEntity
 {
 public:
     Enemy(Scene* scene, const Transform& t, Player* target, const std::string& spritesheet);
     Player* target = nullptr;
 
-    float speed = 200.f;
-    int health = 1;
+    float speed = 200.f;    // Velocidad enemigo
+    int health = 1;         // Vida enemigo
 
-    float shootCooldown = 1.5f;
-    float shootTimer = 0.f;
+    float shootCooldown = 1.5f;     // Tiempo entre disparos
+    float shootTimer = 0.f;         // Temporizador interno
 
+    // Evita disparar mas de una vez por ciclo
     bool hasShot = false;
 
     EnemyState state = EnemyState::MOVING;

@@ -2,7 +2,6 @@
 #include "Game.h"
 #include "SDL3/SDL.h"
 #include "GraphicsInterface.h"
-#include "IntroScene.h"
 #include "HelpScene.h"
 #include "CreditsScene.h"
 #include "GameScene.h"

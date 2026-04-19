@@ -165,7 +165,6 @@
     <ClCompile Include="HelpScene.cpp" />
     <ClCompile Include="HUDWidget.cpp" />
     <ClCompile Include="HybridEnemy.cpp" />
-    <ClCompile Include="IntroScene.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="MyPhysics.cpp" />
     <ClCompile Include="Parameters.cpp" />
@@ -211,7 +210,6 @@
     <ClInclude Include="HelpScene.h" />
     <ClInclude Include="HUDWidget.h" />
     <ClInclude Include="HybridEnemy.h" />
-    <ClInclude Include="IntroScene.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="MyPhysics.h" />
     <ClInclude Include="Parameters.h" />

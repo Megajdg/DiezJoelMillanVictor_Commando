@@ -4,7 +4,6 @@
 #include "SDL3/SDL.h"
 #include "Parameters.h"
 #include <Windows.h>
-#include "IntroScene.h"
 #include "MenuScene.h"
 #include "GameScene.h"
 #include <fstream>
