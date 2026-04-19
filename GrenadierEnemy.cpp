@@ -7,7 +7,7 @@ GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
     : Enemy(scene, t, target)   // reutilizamos la IA base
 {
     // Cambiar sprite si quieres
-    image_name = "Joe.png";
+    image_name = "player_spritesheet_final.png";
 }
 
 void GrenadierEnemy::Update(float dt)

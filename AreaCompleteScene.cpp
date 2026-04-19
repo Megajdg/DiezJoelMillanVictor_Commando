@@ -57,10 +57,7 @@ void AreaCompleteScene::Render()
 
     // Dibujar textos centrados
     GI->PrintText(msg, x1, y1, { 255,255,255 }, EFONT_SIZE::BIG);
-    if (Game::newHS) {
-        GI->PrintText(msg2, x2, y2, { 255,255,255 }, EFONT_SIZE::MEDIUM);
-        Game::newHS = false;
-    }
+    GI->PrintText(msg2, x2, y2, { 255,255,255 }, EFONT_SIZE::MEDIUM);
 
     GI->DrawFrame();
 }

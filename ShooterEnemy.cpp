@@ -6,7 +6,7 @@ ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
     : Enemy(scene, t, target)
 {
     // Cambiar sprite si quieres
-    image_name = "Joe.png";
+    image_name = "player_spritesheet_final.png";
 }
 
 void ShooterEnemy::Update(float dt)

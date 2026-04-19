@@ -6,7 +6,7 @@
 
 HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target)
 {
-    image_name = "Joe.png"; // o el sprite que quieras
+    image_name = "player_spritesheet_final.png"; // o el sprite que quieras
 }
 
 void HybridEnemy::Update(float dt)
