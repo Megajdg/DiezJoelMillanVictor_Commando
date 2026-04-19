@@ -12,7 +12,7 @@ public:
     Player* owner = nullptr;
 
     float timer = 0.f;
-    float fuseTime = 0.6f; // tiempo hasta explotar
+    float fuseTime = 1.f; // tiempo hasta explotar
     Vector2 velocity;
     float gravity = 900.f;
     bool exploded = false;

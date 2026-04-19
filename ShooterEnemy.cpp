@@ -49,5 +49,5 @@ void ShooterEnemy::ShootAtPlayer()
     shot.rotation = atan2(bestDir.y, bestDir.x) * 180.f / 3.14159f;
 
     // Crear bala enemiga
-    new Bullet(myScene, shot, 400.f, true);
+    new Bullet(myScene, shot, 300.f, true);
 }

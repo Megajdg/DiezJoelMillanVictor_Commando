@@ -23,4 +23,5 @@ private:
     std::map<std::string, MIX_Audio*> sounds;
     MIX_Mixer* mixer;
     MIX_Track* musicTrack;
+    std::string currentMusic = "";
 };

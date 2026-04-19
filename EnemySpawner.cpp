@@ -35,7 +35,7 @@ void EnemySpawner::Update(float dt)
         // ZONAS DE SPAWN FUERA DE PANTALLA
         Vector2 spawnTop(
             camX + (rand() % Parameters::screenWidth) - Parameters::screenWidth * 0.5f,
-            worldTop - 150
+            worldTop + 100
         );
 
         Vector2 spawnLeft(

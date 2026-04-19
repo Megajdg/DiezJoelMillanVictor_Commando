@@ -11,7 +11,12 @@ HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target)
 
 void HybridEnemy::Update(float dt)
 {
-    // IA base
+    if (currentAnimation && currentAnimation->name == "throw" && !currentAnimation->finished)
+    {
+        AnimatedEntity::Update(dt);
+        return;
+    }
+
     Enemy::Update(dt);
 }
 
@@ -64,8 +69,8 @@ void HybridEnemy::ThrowGrenade()
     AudioManager::instance().playSFX("grenade.wav");
 
     Vector2 realDir = (target->transform.position - transform.position).normalize();
-    SetAnimation("throw");
 
+    SetAnimation("throw");
 
     static Vector2 dirs[8] = {
         {  1,  0 }, {  1,  1 }, {  0,  1 }, { -1,  1 },

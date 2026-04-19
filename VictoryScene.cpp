@@ -12,7 +12,7 @@ void VictoryScene::Update(float dt)
 {
     timer += dt;
 
-    if (timer > 5.0f || Game::keyDown[SDLK_SPACE])
+    if (timer > 7.0f || Game::keyDown[SDLK_SPACE])
     {
         Game::newHS = false;
         Game::ChangeScene(new MenuScene(GI, mph));

@@ -36,7 +36,7 @@ AnimationSet LoadProjectileAnimations()
 
     AddAnim("bullet",       0, 0, 0, 0.2f);
     AddAnim("bullet_hit",   0, 1, 3, 0.05f, false);
-    AddAnim("grenade",      0, 4, 6, 0.2f);
+    AddAnim("grenade",      0, 4, 6, 0.4f);
     AddAnim("explosion",    0, 7, 9, 0.2f, false);
 
     return set;

@@ -146,16 +146,6 @@ void Player::UpdateMovement(float deltaTime)
     if (left)  dir.x -= 1;
     if (right) dir.x += 1;
 
-    if (dir.x != 0 || dir.y != 0)
-    {
-        dir = dir.normalize();
-
-        float speed = 300.f;
-        transform.position += dir * speed * deltaTime;
-
-        transform.rotation = atan2(dir.y, dir.x) * 180.f / 3.14159f;
-    }
-
     if (isThrowing)
     {
         Animation* a = currentAnimation;
@@ -182,7 +172,6 @@ void Player::UpdateMovement(float deltaTime)
         std::string anim = DirectionToAnimation(angle);
         SetAnimation(anim);
         lastMoveAnim = anim;
-
     }
     else
     {

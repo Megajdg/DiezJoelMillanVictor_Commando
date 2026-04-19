@@ -87,7 +87,13 @@ void AudioManager::setMusicVolume(int volume) {
 void AudioManager::playMusic(std::string path, bool loop) {
 	if (!musicTrack) return;
 
+	// Si ya está sonando esta música, no hagas nada
+	if (currentMusic == path)
+		return;
+
 	stopMusic();
+
+	currentMusic = path;
 
 	MIX_Audio* audio = nullptr;
 	auto it = sounds.find(path);
@@ -120,4 +126,5 @@ void AudioManager::stopMusic() {
 	if (musicTrack != nullptr) {
 		MIX_StopTrack(musicTrack, 0);
 	}
+	currentMusic = "";
 }

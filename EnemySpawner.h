@@ -5,7 +5,7 @@ class EnemySpawner : public Actor
 {
 public:
     float timer = 0.f;
-    float spawnRate = 2.f;
+    float spawnRate = 1.5f;
 
     EnemySpawner(Scene* scene);
 

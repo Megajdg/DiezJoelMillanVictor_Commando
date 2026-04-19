@@ -16,7 +16,7 @@ Grenade::Grenade(Scene* scene, const Transform& t, Vector2 direction, Player* ow
 
     direction = direction.normalize();
 
-    float initialSpeed = 600.f;
+    float initialSpeed = 300.f;
 
     // Velocidad inicial en la dirección deseada
     velocity = direction * initialSpeed;

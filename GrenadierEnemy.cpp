@@ -3,14 +3,18 @@
 #include "Scene.h"
 #include "AudioManager.h"
 
-GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target, "Grenadier.png")
+GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target, "Grenadier.png")
 {
 }
 
 void GrenadierEnemy::Update(float dt)
 {
-    // IA base
+    if (currentAnimation && currentAnimation->name == "throw" && !currentAnimation->finished)
+    {
+        AnimatedEntity::Update(dt);
+        return;
+    }
+
     Enemy::Update(dt);
 }
 
@@ -22,6 +26,7 @@ void GrenadierEnemy::ShootAtPlayer()
 void GrenadierEnemy::ThrowGrenade()
 {
     if (!target) return;
+
     SetAnimation("throw");
 
     AudioManager::instance().playSFX("grenade.wav");

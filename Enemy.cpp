@@ -198,6 +198,7 @@ void Enemy::UpdateShooting(float dt)
     {
         ShootAtPlayer();
         hasShot = true;
+        return;
     }
 
     Vector2 dir = (target->transform.position - transform.position).normalize();
