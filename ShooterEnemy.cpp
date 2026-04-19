@@ -3,10 +3,8 @@
 #include "AudioManager.h"
 
 ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target)
+    : Enemy(scene, t, target, "Shooter.png")
 {
-    // Cambiar sprite si quieres
-    image_name = "player_spritesheet_final.png";
 }
 
 void ShooterEnemy::Update(float dt)
@@ -21,7 +19,7 @@ void ShooterEnemy::ShootAtPlayer()
 
     AudioManager::instance().playSFX("shoot.wav");
 
-    // Dirección cardinal más cercana
+    // Direcciï¿½n cardinal mï¿½s cercana
     Vector2 realDir = target->transform.position - transform.position;
     realDir = realDir.normalize();
 

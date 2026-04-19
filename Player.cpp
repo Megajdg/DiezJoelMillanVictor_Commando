@@ -11,7 +11,7 @@
 
 static std::string DirectionToAnimation(float angle)
 {
-    // Normalizamos el ángulo a 0–360
+    // Normalizamos el ï¿½ngulo a 0ï¿½360
     while (angle < 0) angle += 360;
     while (angle >= 360) angle -= 360;
 
@@ -101,7 +101,7 @@ void Player::Update(float deltaTime)
     // Limitar Y dentro del mapa
     transform.position.y = Clamp(transform.position.y, mapTop, mapBottom);
 
-    // Convertir posición del jugador a pantalla
+    // Convertir posiciï¿½n del jugador a pantalla
     float playerScreenY = transform.position.y - Game::camera.position.y + Parameters::screenHeight * 0.5f;
 
     // Top del HUD en pantalla
@@ -165,6 +165,7 @@ void Player::UpdateMovement(float deltaTime)
             isThrowing = false;
             SetAnimation(IdleFromRun(lastMoveAnim));
         }
+        return;
     }
 
     if (dir.x != 0 || dir.y != 0)

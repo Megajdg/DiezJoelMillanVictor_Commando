@@ -19,6 +19,12 @@ public:
         : Sprite(scene, img, size) {
     }
 
+    AnimatedEntity(Scene* scene, std::string img, const Vector2& pos, Vector2 size)
+        : Sprite(scene, img, Transform(), size)
+    {
+        transform.position = pos;
+    }
+
     virtual void SetAnimation(const std::string& name)
     {
         Animation* a = animationSet.Get(name);

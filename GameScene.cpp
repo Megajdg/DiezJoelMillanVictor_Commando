@@ -50,8 +50,12 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Sc
 
     // Player
     GI->LoadImage("Enemy.png");
-    GI->LoadImage("Joe.png");
+    GI->LoadImage("Shooter.png");
+    GI->LoadImage("Grenadier.png");
+    GI->LoadImage("Hybrid.png");
     GI->LoadImage("player_spritesheet_final.png");
+    GI->LoadImage("projectiles.png");
+    GI->LoadImage("powerUpGrenade.png");
     Transform t;
     t.position = Vector2(0, -200);
     player = new Player(this, "player_spritesheet_final.png", t, 100);
@@ -113,7 +117,7 @@ GameScene::GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber) : Sc
 
 void GameScene::Update(float dt)
 {
-    // Volver al menú con ESC
+    // Volver al menï¿½ con ESC
     if (Game::keyDown[SDLK_ESCAPE])
     {
         Game::ChangeScene(new MenuScene(GI, mph));

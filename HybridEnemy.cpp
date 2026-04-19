@@ -4,9 +4,9 @@
 #include <cstdlib>
 #include "AudioManager.h"
 
-HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target)
+HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target)
+    : Enemy(scene, t, target, "Hybrid.png")
 {
-    image_name = "player_spritesheet_final.png"; // o el sprite que quieras
 }
 
 void HybridEnemy::Update(float dt)
@@ -28,7 +28,7 @@ void HybridEnemy::ShootBullet()
 {
     AudioManager::instance().playSFX("shoot.wav");
 
-    // Dirección hacia el jugador
+    // Direcciï¿½n hacia el jugador
     Vector2 realDir = (target->transform.position - transform.position).normalize();
 
     // 8 direcciones cardinales
@@ -64,6 +64,8 @@ void HybridEnemy::ThrowGrenade()
     AudioManager::instance().playSFX("grenade.wav");
 
     Vector2 realDir = (target->transform.position - transform.position).normalize();
+    SetAnimation("throw");
+
 
     static Vector2 dirs[8] = {
         {  1,  0 }, {  1,  1 }, {  0,  1 }, { -1,  1 },

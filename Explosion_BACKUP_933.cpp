@@ -3,9 +3,12 @@
 #include "MyPhysics.h"
 #include "Enemy.h"
 #include "CircleCollider.h"
+<<<<<<< HEAD
 #include "AudioManager.h"
+=======
 #include "AnimatedEntity.h"
 #include "AnimationProjectile.h"
+>>>>>>> origin/mas
 
 
 Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) 
@@ -37,14 +40,14 @@ void Explosion::OnTrigger(Actor* other)
 {
     if (fromEnemy)
     {
-        // Solo daï¿½a al jugador
+        // Solo daña al jugador
         Player* p = dynamic_cast<Player*>(other);
         if (p)
             p->TakeDamage(1);
     }
     else
     {
-        // Solo daï¿½a enemigos
+        // Solo daña enemigos
         Enemy* e = dynamic_cast<Enemy*>(other);
         if (e)
             e->TakeDamage(1);

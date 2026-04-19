@@ -57,7 +57,7 @@ void HUDWidget::Render()
     // HIGH SCORE
     std::string hiStr = "HI " + Pad(Game::LoadHighScore(), 6);
 
-    // Dibujo estilo Commodore: todo en una línea
+    // Dibujo estilo Commodore: todo en una lï¿½nea
     GI->PrintText(scoreStr, x, y, { 255,255,255 }, EFONT_SIZE::BIG);
     GI->PrintText("Q", x + 450, y, { 255,255,255 }, EFONT_SIZE::BIG, true);
     GI->PrintText(grenStr, x + 450, y, { 255,255,255 }, EFONT_SIZE::BIG);

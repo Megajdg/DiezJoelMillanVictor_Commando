@@ -4,10 +4,8 @@
 #include "AudioManager.h"
 
 GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target)   // reutilizamos la IA base
+    : Enemy(scene, t, target, "Grenadier.png")
 {
-    // Cambiar sprite si quieres
-    image_name = "player_spritesheet_final.png";
 }
 
 void GrenadierEnemy::Update(float dt)
@@ -24,10 +22,11 @@ void GrenadierEnemy::ShootAtPlayer()
 void GrenadierEnemy::ThrowGrenade()
 {
     if (!target) return;
+    SetAnimation("throw");
 
     AudioManager::instance().playSFX("grenade.wav");
 
-    // Dirección real hacia el jugador
+    // Direcciï¿½n real hacia el jugador
     Vector2 realDir = target->transform.position - transform.position;
     realDir = realDir.normalize();
 
@@ -37,7 +36,7 @@ void GrenadierEnemy::ThrowGrenade()
         { -1,  0 }, { -1, -1 }, {  0, -1 }, {  1, -1 }
     };
 
-    // Elegir la dirección más cercana
+    // Elegir la direcciï¿½n mï¿½s cercana
     float bestDot = -9999.f;
     Vector2 bestDir;
 

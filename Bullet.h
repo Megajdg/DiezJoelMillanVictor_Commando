@@ -1,20 +1,19 @@
 #pragma once
-#include "Sprite.h"
+#include "AnimatedEntity.h"
 
-class Bullet : public Sprite
+class Bullet : public AnimatedEntity
 {
 public:
-    Bullet(Scene* scene, const Transform& t, float speed, bool fromEnemy = false);
+    Bullet(Scene* scene, const Transform& t, float speed, bool fromEnemy);
 
-    void Update(float dt) override;
-
-    void OnTrigger(Actor* otherActor) override;
-
+    float speed;
     bool fromEnemy;
 
-    float maxDistance = 400.f;
     float traveled = 0.f;
+    float maxDistance = 400.f;
 
-private:
-    float speed;
+    bool hit = false;
+
+    void Update(float dt) override;
+    void OnTrigger(Actor* other) override;
 };

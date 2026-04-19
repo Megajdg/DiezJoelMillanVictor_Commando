@@ -1,10 +1,78 @@
-﻿  Bullet.cpp
+﻿  AnimatedEntity.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "AnimatedEntity.cpp")
+  
+  AnimationPowerUp.cpp
+  AnimationProjectile.cpp
+  AnimationsEnemy.cpp
+  AnimationsPlayer.cpp
+  AreaCompleteScene.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "AreaCompleteScene.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "AreaCompleteScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "AreaCompleteScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "AreaCompleteScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "AreaCompleteScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\AreaCompleteScene.cpp(59,28): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\AreaCompleteScene.cpp(59,24): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\AreaCompleteScene.cpp(60,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\AreaCompleteScene.cpp(60,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Bullet.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "Bullet.cpp")
+  
+  CreditsScene.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "CreditsScene.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "CreditsScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "CreditsScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "CreditsScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "CreditsScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+  DiezJoelMillanVictor_Commando.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "DiezJoelMillanVictor_Commando.cpp")
   
   Enemy.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "Enemy.cpp")
+  
+  EnemySpawner.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "EnemySpawner.cpp")
   
   Explosion.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -36,6 +104,38 @@ C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_T
   
 C:\Users\joeld\Desktop\Commando\Game.cpp(167,22): warning C4244: 'inicializando': conversión de 'Uint64' a 'unsigned int'; posible pérdida de datos
 C:\Users\joeld\Desktop\Commando\Game.cpp(200,24): warning C4244: '=': conversión de 'Uint64' a 'unsigned int'; posible pérdida de datos
+  GameOverScene.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GameOverScene.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GameOverScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GameOverScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GameOverScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GameOverScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(50,28): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(50,24): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(51,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(51,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(52,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(52,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(54,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GameOverScene.cpp(54,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   GameScene.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "GameScene.cpp")
@@ -60,9 +160,129 @@ C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_T
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
+  GraphicsInterface.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GraphicsInterface.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GraphicsInterface.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GraphicsInterface.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GraphicsInterface.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "GraphicsInterface.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\SDL\SDL3_ttf-3.2.2\include\SDL3_ttf\SDL_ttf.h(113,16): warning C4099: 'TTF_Font': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+  (compilando archivo de origen "GraphicsInterface.cpp")
+      C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(47,8):
+      vea la declaración de 'TTF_Font'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(89,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(92,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(95,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(98,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(103,24): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(103,24): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(103,27): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(103,27): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(120,16): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(129,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(132,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(135,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(138,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(143,24): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(143,24): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(143,27): warning C4838: la conversión de 'int' en 'float' requiere una conversión de restricción
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(143,27): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(160,16): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(169,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(172,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(175,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.cpp(178,27): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+  Grenade.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Grenade.cpp")
+  
   GrenadePowerup.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "GrenadePowerup.cpp")
+  
+  GrenadierEnemy.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GrenadierEnemy.cpp")
+  
+  GunWeapon.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "GunWeapon.cpp")
+  
+  Generando código...
+  Compilando...
+  HelpScene.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HelpScene.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HelpScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HelpScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HelpScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HelpScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+  HUDWidget.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HUDWidget.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HUDWidget.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HUDWidget.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HUDWidget.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "HUDWidget.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\HUDWidget.cpp(38,11): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\HUDWidget.cpp(42,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\HUDWidget.cpp(41,11): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  HybridEnemy.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "HybridEnemy.cpp")
   
   IntroScene.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -88,33 +308,95 @@ C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_T
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
-  MyPhysics.cpp
+  MenuScene.cpp
 C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "MyPhysics.cpp")
-  
-  Scene.cpp
-C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "Scene.cpp")
+  (compilando archivo de origen "MenuScene.cpp")
   
 C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "Scene.cpp")
+  (compilando archivo de origen "MenuScene.cpp")
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
       vea la declaración de 'SDL_Window'
   
 C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "Scene.cpp")
+  (compilando archivo de origen "MenuScene.cpp")
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
       vea la declaración de 'SDL_Renderer'
   
 C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "Scene.cpp")
+  (compilando archivo de origen "MenuScene.cpp")
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
 C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "Scene.cpp")
+  (compilando archivo de origen "MenuScene.cpp")
       C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
       vea la declaración de 'SDL_Texture'
   
+  Player.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Player.cpp")
+  
+  ShooterEnemy.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "ShooterEnemy.cpp")
+  
+  Sprite.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Sprite.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "Sprite.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "Sprite.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "Sprite.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "Sprite.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+  VictoryScene.cpp
+C:\Users\joeld\Desktop\Commando\Vector2.h(41,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "VictoryScene.cpp")
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(35,8): warning C4099: 'SDL_Window': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "VictoryScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_video.h(175,16):
+      vea la declaración de 'SDL_Window'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(36,8): warning C4099: 'SDL_Renderer': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "VictoryScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(146,16):
+      vea la declaración de 'SDL_Renderer'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(38,30): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "VictoryScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\GraphicsInterface.h(42,9): warning C4099: 'SDL_Texture': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "VictoryScene.cpp")
+      C:\Users\joeld\Desktop\Commando\SDL\SDL3-3.4.0\include\SDL3\SDL_render.h(160,8):
+      vea la declaración de 'SDL_Texture'
+  
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(52,28): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(52,24): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(53,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(53,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(54,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(54,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(55,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(55,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(57,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joeld\Desktop\Commando\VictoryScene.cpp(57,29): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   Generando código...
   FreedomForArias.vcxproj -> C:\Users\joeld\Desktop\Commando\x64\Debug\DiezJoelMillanVictor_Commando.exe

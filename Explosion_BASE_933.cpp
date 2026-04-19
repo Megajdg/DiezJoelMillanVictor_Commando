@@ -3,20 +3,11 @@
 #include "MyPhysics.h"
 #include "Enemy.h"
 #include "CircleCollider.h"
-#include "AudioManager.h"
-#include "AnimatedEntity.h"
-#include "AnimationProjectile.h"
 
-
-Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) 
-    : AnimatedEntity(scene, "projectiles.png", t, Vector2(100, 100))
+Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy) : Sprite(scene, "explosion.png", t, Vector2(50, 50))
 {
     this->fromEnemy = fromEnemy;
     scene->AddActor(this);
-    AudioManager::instance().playSFX("explosion.wav");
-
-    animationSet = LoadProjectileAnimations();
-    SetAnimation("explosion");
 
     CircleCollider* col = new CircleCollider();
     col->radius = radius;
@@ -26,25 +17,25 @@ Explosion::Explosion(Scene* scene, const Transform& t, bool fromEnemy)
 
 void Explosion::Update(float dt)
 {
-    AnimatedEntity::Update(dt);
-
-    //cuando termina la animacion se destruye
-    if (currentAnimation->finished)
+    timer += dt;
+    if (!dying && timer >= duration) {
+        dying = true;
         myScene->DestroyActor(this);
+    }
 }
 
 void Explosion::OnTrigger(Actor* other)
 {
     if (fromEnemy)
     {
-        // Solo daï¿½a al jugador
+        // Solo daña al jugador
         Player* p = dynamic_cast<Player*>(other);
         if (p)
             p->TakeDamage(1);
     }
     else
     {
-        // Solo daï¿½a enemigos
+        // Solo daña enemigos
         Enemy* e = dynamic_cast<Enemy*>(other);
         if (e)
             e->TakeDamage(1);
