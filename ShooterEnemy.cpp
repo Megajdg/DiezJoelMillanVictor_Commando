@@ -2,6 +2,7 @@
 #include "Bullet.h"
 #include "AudioManager.h"
 
+// Constructor que llama al constructor base Enemy con la textura de Sooter.png
 ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
     : Enemy(scene, t, target, "Shooter.png")
 {
@@ -9,20 +10,22 @@ ShooterEnemy::ShooterEnemy(Scene* scene, const Transform& t, Player* target)
 
 void ShooterEnemy::Update(float dt)
 {
-    // IA base
+    // usa la IA general del enemigo
     Enemy::Update(dt);
 }
 
 void ShooterEnemy::ShootAtPlayer()
 {
-    if (!target) return;
+    if (!target) return; // Si no hay jugador, no dispara
 
-    AudioManager::instance().playSFX("shoot.wav");
+    // Sonido del disparo
+    AudioManager::instance().PlaySFX("shoot.wav");
 
-    // Direcci�n cardinal m�s cercana
+    // Direccion real hacia el jugador.    
     Vector2 realDir = target->transform.position - transform.position;
     realDir = realDir.normalize();
 
+    // Direcciones cardinales y diagonales para elegir la mas cercana.
     static Vector2 dirs[8] = {
         {  1,  0 }, {  1,  1 }, {  0,  1 }, { -1,  1 },
         { -1,  0 }, { -1, -1 }, {  0, -1 }, {  1, -1 }
@@ -31,6 +34,8 @@ void ShooterEnemy::ShootAtPlayer()
     float bestDot = -9999.f;
     Vector2 bestDir;
 
+    // Elegir la direccion cardinal mas parecida a la direccion real.
+    // Esto hace que el enemigo dispare en 8 direcciones discretas.
     for (int i = 0; i < 8; i++)
     {
         Vector2 d = dirs[i].normalize();
@@ -43,9 +48,11 @@ void ShooterEnemy::ShootAtPlayer()
         }
     }
 
-    // Crear transform del disparo
+    // Crear transform del disparo desplazado para que apareza desde dentro del player
     Transform shot;
     shot.position = transform.position + bestDir * 30.f;
+
+    // Rotacion en grados segun la direccion elegida
     shot.rotation = atan2(bestDir.y, bestDir.x) * 180.f / 3.14159f;
 
     // Crear bala enemiga

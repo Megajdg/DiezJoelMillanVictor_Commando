@@ -11,33 +11,39 @@
 
 MenuScene::MenuScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 {
+    // Reiniciamos los puntos necesarios para obtener una vida
     Game::nextExtraLifeScore = 10000;
-    AudioManager::instance().playMusic("maintheme.mp3");
 
+    // Hacemos sonar la musica del menu
+    AudioManager::instance().PlayMusic("maintheme.mp3");
+
+    // Cargamos el logo principal
     GI->LoadImage("logo.png");
 }
 
 void MenuScene::Update(float dt)
 {
+    // Variables para saber si se ha pulsado alguna tecla en el ultimo frame
     static bool upPressedLastFrame = false;
     static bool downPressedLastFrame = false;
     static bool enterPressedLastFrame = false;
     static bool escPressedLastFrame = false;
 
+    // Variables para guardar si se esta pulsando una tecla
     bool up = Game::keyDown[SDLK_UP];
     bool down = Game::keyDown[SDLK_DOWN];
     bool enter = Game::keyDown[SDLK_RETURN];
     bool esc = Game::keyDown[SDLK_ESCAPE];
 
-    // --- UP ---
+    // Si se esta pulsando hacia arriba y no se ha pulsado en el frame, subimos en la seleccion de opciones
     if (up && !upPressedLastFrame)
         selected = (selected + 3) % 4;
 
-    // --- DOWN ---
+    // Si se esta pulsando hacia abajo y no se ha pulsado en el frame, bajamos en la seleccion de opciones
     if (down && !downPressedLastFrame)
         selected = (selected + 1) % 4;
 
-    // --- ENTER ---
+    // Si se esta pulsando enter y no se ha pulsado en el frame, seleccionamos la opcion en la que nos encontramos
     if (enter && !enterPressedLastFrame)
     {
         switch (selected)
@@ -49,10 +55,11 @@ void MenuScene::Update(float dt)
         }
     }
 
+    // Salir del juego pulsando ESC
     if (esc && !escPressedLastFrame)
-        Game::ChangeScene(nullptr); // Cerramos el juego
+        Game::ChangeScene(nullptr);
 
-    // Guardar estado para el siguiente frame
+    // Guardamos el estado para el siguiente frame
     upPressedLastFrame = up;
     downPressedLastFrame = down;
     enterPressedLastFrame = enter;
@@ -61,15 +68,17 @@ void MenuScene::Update(float dt)
 
 void MenuScene::Render()
 {
+    // Pantalla en negro
     GI->ClearScreen(0, 0, 0);
 
-    // Tamaño real del logo
+    // Tamaño del logo
     Vector2 logoSize(600, 84);
 
     // Posición centrada
     float logoX = (Parameters::screenWidth - logoSize.x) * 0.5f;
     float logoY = Parameters::screenHeight * 0.15f;
 
+    // Calculamos posicion donde ira el logo
     Transform t;
     t.position = Vector2(
         logoX + logoSize.x * 0.5f + Game::camera.position.x - Parameters::screenWidth * 0.5f,
@@ -78,11 +87,13 @@ void MenuScene::Render()
     t.scale = Vector2(1, 1);
     t.rotation = 0;
 
+    // Lo pintamos en la posicion deseada
     GI->DrawSprite("logo.png", t, logoSize);
 
-    // --- OPCIONES ---
+    // Texto principal de opciones de menu
     const char* options[4] = { "JUGAR", "AYUDA", "CREDITOS", "SALIR" };
 
+    // Calculamos el tamaño real de los textos, centramos, posicionamos y dibujamos
     for (int i = 0; i < 4; i++)
     {
         std::string opt = options[i];
@@ -96,6 +107,6 @@ void MenuScene::Render()
         GI->PrintText(opt, x, y, col, EFONT_SIZE::MEDIUM);
     }
 
+    // Renderizamos
     GI->DrawFrame();
 }
-

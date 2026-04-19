@@ -8,17 +8,17 @@
 
 GrenadePowerup::GrenadePowerup(Scene* scene, const Vector2& pos) : AnimatedEntity(scene, "powerUpGrenade.png", pos, Vector2(60, 60))
 {
+    // Registramos el actor en la escena con posicion
+    scene->AddActor(this);
 
+    // Cargamos las animaciones del spritesheet de proyectiles y activamos la animacion de bullet
     animationSet = LoadPowerUpAnimations();
     SetAnimation("grenadePU");
 
-    scene->AddActor(this);
-
-    // Collider tipo trigger
+    // Añadimos un collider con trigger de radio 30
     CircleCollider* col = new CircleCollider();
     col->radius = 30;
     col->isTrigger = true;
-
     scene->mph->AddCollider(col, this);
 }
 
@@ -29,11 +29,13 @@ void GrenadePowerup::Update(float dt)
 
 void GrenadePowerup::OnTrigger(Actor* other)
 {
+    // Solo reaccionar si el que entra es el jugador 
     Player* p = dynamic_cast<Player*>(other);
     if (!p)
         return;
 
-    AudioManager::instance().playSFX("powerup.wav");
+    // Sonido de powerup
+    AudioManager::instance().PlaySFX("powerup.wav");
 
     // Dar 3 granadas
     p->grenades += 3;

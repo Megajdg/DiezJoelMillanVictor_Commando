@@ -4,29 +4,27 @@
 #include "StaticMapActor.h"
 #include <vector>
 
+/// <summary>
+/// Escena de juego
+/// </summary>
 class GameScene : public Scene
 {
 public:
-    GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber);
+    GameScene(GraphicsInterface* GI, MyPhysics* mph, int areaNumber);           // Constructor
 
-    StaticMapActor* mapActor = nullptr;
+    StaticMapActor* mapActor = nullptr;                                         // Puntero al actor de colliders del mapa
 
-    void Update(float dt) override;
-    void Render() override;
+    void Update(float dt) override;                                             // Gestiona logica de volver, de vidas extra y de deteccion de final de area
+    void Render() override;                                                     // Gestiona el renderizado
 
-    int score = 0;
+    int score = 0;                                                              // Puntuacion local
+    int area = 1;                                                               // Numero de area actual
 
-    int area = 1;
+    void AddScore(int amount);                                                  // Actualiza la puntuacion
+    void GenerateColliders(std::string mapImage, std::string collisionMask);    // Genera las colisiones de los mapas
 
-    void AddScore(int amount);
+    Player* GetPlayer() const { return player; }                                // Devuelve al jugador
 
-    void GenerateColliders(std::string mapImage, std::string collisionMask);
-
-    Player* GetPlayer() const { return player; }
-
-    Player* player = nullptr;
-
-    std::vector<Vector2> grenadePickupPositions;
-
-    bool firstFrame = true;
+    Player* player = nullptr;                                                   // Puntero directo al jugador
+    std::vector<Vector2> grenadePickupPositions;                                // Vector de posiciones de powerup
 };

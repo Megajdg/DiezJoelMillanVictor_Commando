@@ -1,8 +1,11 @@
 #pragma once
 #include "Collider.h"
-class CircleCollider :public Collider
+
+/// <summary>
+/// Define un collider circular
+/// </summary>
+class CircleCollider : public Collider
 {
 public:
-	float radius{};
+	float radius{};		// Radio del collider
 };
-

@@ -11,25 +11,32 @@ HelpScene::HelpScene(GraphicsInterface* GI, MyPhysics* mph) : Scene(GI, mph)
 
 void HelpScene::Update(float dt)
 {
-    // Volver al menú con ESC
+    // Volver al menu pulsando ESC
     if (Game::keyDown[SDLK_ESCAPE])
         Game::ChangeScene(new MenuScene(GI, mph));
 }
 
 void HelpScene::Render()
 {
+    // Pantalla en negro
     GI->ClearScreen(0, 0, 0);
 
-    // --- TÍTULO ---
+    // Texto principal de la pantalla
     std::string title = "AYUDA";
+
+    // Calculamos el tamaño real del texto segun la fuente
     Vector2 titleSize = GI->MeasureText(title, EFONT_SIZE::BIG);
 
+    // Centramos horizontalmente
     float titleX = (Parameters::screenWidth - titleSize.x) * 0.5f;
+
+    // Posicionamos verticalmente
     float titleY = Parameters::screenHeight * 0.15f;
 
+    // Dibujamos el texto
     GI->PrintText(title, titleX, titleY, { 255,255,255 }, EFONT_SIZE::BIG);
 
-    // --- LÍNEAS DE AYUDA ---
+    // Texto principal de ayuda
     const char* lines[] = {
         "W/S: Avanzar / Retroceder",
         "A/D: Girar nave",
@@ -37,6 +44,7 @@ void HelpScene::Render()
         "G: Lanzar granada"
     };
 
+    // Calculamos el tamaño real de los textos, centramos, posicionamos y dibujamos
     for (int i = 0; i < 4; i++)
     {
         std::string txt = lines[i];
@@ -48,8 +56,10 @@ void HelpScene::Render()
         GI->PrintText(txt, x, y, { 255,255,255 }, EFONT_SIZE::MEDIUM);
     }
 
-    // --- VOLVER ---
+    // Texto de volver de la pantalla
     std::string back = "Pulsa ESC para volver";
+
+    // Calculamos el tamaño real del texto, centramos, posicionamos y dibujamos
     Vector2 backSize = GI->MeasureText(back, EFONT_SIZE::MEDIUM);
 
     float backX = (Parameters::screenWidth - backSize.x) * 0.5f;
@@ -57,5 +67,6 @@ void HelpScene::Render()
 
     GI->PrintText(back, backX, backY, { 255,0,0 }, EFONT_SIZE::MEDIUM);
 
+    // Renderizamos
     GI->DrawFrame();
 }

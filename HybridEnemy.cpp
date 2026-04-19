@@ -4,13 +4,13 @@
 #include <cstdlib>
 #include "AudioManager.h"
 
-HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target)
-    : Enemy(scene, t, target, "Hybrid.png")
+HybridEnemy::HybridEnemy(Scene* scene, const Transform& t, Player* target) : Enemy(scene, t, target, "Hybrid.png")
 {
 }
 
 void HybridEnemy::Update(float dt)
 {
+    // Si esta en animación de throw, esperar a que termine antes de usar IA
     if (currentAnimation && currentAnimation->name == "throw" && !currentAnimation->finished)
     {
         AnimatedEntity::Update(dt);
@@ -22,6 +22,7 @@ void HybridEnemy::Update(float dt)
 
 void HybridEnemy::ShootAtPlayer()
 {
+    // Posibilidad del 50% que dispare una bala o una granada
     int r = rand() % 2;
     if (r == 0)
         ShootBullet();
@@ -31,9 +32,10 @@ void HybridEnemy::ShootAtPlayer()
 
 void HybridEnemy::ShootBullet()
 {
-    AudioManager::instance().playSFX("shoot.wav");
+    // Sonido del disparo
+    AudioManager::instance().PlaySFX("shoot.wav");
 
-    // Direcci�n hacia el jugador
+    // Direccion hacia el jugador
     Vector2 realDir = (target->transform.position - transform.position).normalize();
 
     // 8 direcciones cardinales
@@ -45,6 +47,7 @@ void HybridEnemy::ShootBullet()
     float bestDot = -9999.f;
     Vector2 bestDir;
 
+    // Elegir direccion cardinal más cercana
     for (int i = 0; i < 8; i++)
     {
         Vector2 d = dirs[i].normalize();
@@ -57,19 +60,26 @@ void HybridEnemy::ShootBullet()
         }
     }
 
+    // Crear transform del disparo desplazado para que apareza desde dentro del player
     Transform shot;
     shot.position = transform.position + bestDir * 30.f;
+
+    // Rotacion en grados segun la direccion elegida
     shot.rotation = atan2(bestDir.y, bestDir.x) * 180.f / 3.14159f;
 
+    // Crear bala enemiga
     new Bullet(myScene, shot, 400.f, true);
 }
 
 void HybridEnemy::ThrowGrenade()
 {
-    AudioManager::instance().playSFX("grenade.wav");
+    // Sonido de la granada
+    AudioManager::instance().PlaySFX("grenade.wav");
 
+    // Direccion real hacia el jugador
     Vector2 realDir = (target->transform.position - transform.position).normalize();
 
+    // Activar animacion de lanzamiento
     SetAnimation("throw");
 
     static Vector2 dirs[8] = {
@@ -80,6 +90,7 @@ void HybridEnemy::ThrowGrenade()
     float bestDot = -9999.f;
     Vector2 bestDir;
 
+    // Elegir direccion cardinal más cercana
     for (int i = 0; i < 8; i++)
     {
         Vector2 d = dirs[i].normalize();
@@ -92,9 +103,11 @@ void HybridEnemy::ThrowGrenade()
         }
     }
 
+    // Crear transform de la granada
     Transform t;
     t.position = transform.position + bestDir * 30.f;
     t.rotation = atan2(bestDir.y, bestDir.x) * 180.f / 3.14159f;
 
+    // Crear granada enemiga
     new Grenade(myScene, t, bestDir, nullptr, true);
 }

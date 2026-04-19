@@ -5,6 +5,9 @@
 #include "GraphicsInterface.h"
 #include "Parameters.h"
 
+/// <summary>
+/// Helper para pasar algo a String
+/// </summary>
 template<typename T>
 std::string ToString(const T& value)
 {
@@ -13,6 +16,9 @@ std::string ToString(const T& value)
     return oss.str();
 }
 
+/// <summary>
+/// Helper para pasar una variable a String
+/// </summary>
 std::string Pad(int value, int digits)
 {
     std::string s = std::to_string(value);
@@ -25,6 +31,7 @@ HUDWidget::HUDWidget(Scene* scene, Player* player) : Widget(scene)
     this->player = player;
     this->gameScene = (GameScene*)scene;
 
+    // Registrar HUD como elemento de interfaz
     scene->AddUI(this);
 }
 
@@ -32,6 +39,7 @@ void HUDWidget::Render()
 {
     auto GI = myScene->GI;
 
+    // Fondo negro del HUD en la parte inferior
     float hudHeight = 1000;
     int hudWidth = 1270;
     int x = (Parameters::screenWidth - hudWidth) / 2;
@@ -43,7 +51,6 @@ void HUDWidget::Render()
         hudHeight,
         0, 0, 0
     );
-
 
     // SCORE
     std::string scoreStr = "SCORE " + Pad(gameScene->score, 6);
@@ -57,7 +64,7 @@ void HUDWidget::Render()
     // HIGH SCORE
     std::string hiStr = "HI " + Pad(Game::LoadHighScore(), 6);
 
-    // Dibujo estilo Commodore: todo en una l�nea
+    // Dibujo estilo Commodore: todo en una linea
     GI->PrintText(scoreStr, x, y, { 255,255,255 }, EFONT_SIZE::BIG);
     GI->PrintText("Q", x + 450, y, { 255,255,255 }, EFONT_SIZE::BIG, true);
     GI->PrintText(grenStr, x + 450, y, { 255,255,255 }, EFONT_SIZE::BIG);

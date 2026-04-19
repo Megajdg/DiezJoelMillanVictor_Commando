@@ -9,6 +9,7 @@ GrenadierEnemy::GrenadierEnemy(Scene* scene, const Transform& t, Player* target)
 
 void GrenadierEnemy::Update(float dt)
 {
+    // Si esta en animación de throw, esperar a que termine antes de usar IA
     if (currentAnimation && currentAnimation->name == "throw" && !currentAnimation->finished)
     {
         AnimatedEntity::Update(dt);
@@ -20,6 +21,7 @@ void GrenadierEnemy::Update(float dt)
 
 void GrenadierEnemy::ShootAtPlayer()
 {
+    // Este enemigo siempre lanza granadas
     ThrowGrenade();
 }
 
@@ -27,11 +29,13 @@ void GrenadierEnemy::ThrowGrenade()
 {
     if (!target) return;
 
+    // Activar animacion de lanzamiento
     SetAnimation("throw");
 
-    AudioManager::instance().playSFX("grenade.wav");
+    // Sonido granada
+    AudioManager::instance().PlaySFX("grenade.wav");
 
-    // Direcci�n real hacia el jugador
+    // Direccion real hacia el jugador
     Vector2 realDir = target->transform.position - transform.position;
     realDir = realDir.normalize();
 
@@ -41,14 +45,15 @@ void GrenadierEnemy::ThrowGrenade()
         { -1,  0 }, { -1, -1 }, {  0, -1 }, {  1, -1 }
     };
 
-    // Elegir la direcci�n m�s cercana
+    // Elegir la direccion mas cercana
     float bestDot = -9999.f;
     Vector2 bestDir;
 
+    // Elegir la direccion cardinal mas parecida a la real
     for (int i = 0; i < 8; i++)
     {
         Vector2 d = dirs[i].normalize();
-        float dot = realDir.x * d.x + realDir.y * d.y; // producto punto
+        float dot = realDir.x * d.x + realDir.y * d.y;
 
         if (dot > bestDot)
         {
@@ -62,7 +67,6 @@ void GrenadierEnemy::ThrowGrenade()
     t.position = transform.position + bestDir * 30.f;
     t.rotation = atan2(bestDir.y, bestDir.x) * 180.f / 3.14159f;
 
-    // Lanzar granada
+    // Crear granada enemiga
     new Grenade(myScene, t, bestDir, nullptr, true);
 }
-

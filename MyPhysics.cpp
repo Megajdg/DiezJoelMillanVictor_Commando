@@ -6,40 +6,45 @@
 
 MyPhysics::MyPhysics()
 {
-
 }
 
 void MyPhysics::Update()
 {
 	for (auto it1 = colliders_by_actor.begin(); it1 != colliders_by_actor.end(); ++it1)
 	{
-		//¿Es el actor dinámico? (los estáticos no generan eventos)
+		// Es el actor dinamico? (los estaticos no generan eventos)
 		Actor* actor1 = it1->first;
 		if (!actor1->isStatic)
-			//Por cada collider que tiene el actor
+			// Por cada collider que tiene el actor
 			for (Collider* collider1 : *it1->second)
 			{
-				//Inspeccionar el resto de actores de la escena que tengan colliders
+				// Inspeccionar el resto de actores de la escena que tengan colliders
 				for (auto it2 = std::next(it1); it2 != colliders_by_actor.end(); ++it2)
 				{
 					Actor* actor2 = it2->first;
-					//Para cada uno de estos actores, inspeccionar todos sus colliders
-					//Este segundo actor da igual si es estático o no, hay que inspeccionarlo,
-					//ya que puede estar colisionando con el dinámico que estamos analizando
+					// Para cada uno de estos actores, inspeccionar todos sus colliders
+					// Este segundo actor da igual si es estatico o no, hay que inspeccionarlo,
+					// ya que puede estar colisionando con el dinamico que estamos analizando
 					for (Collider* collider2 : *it2->second)
 					{
+						// Detecta el tipo de colision
 						HIT_INFO hit = ManageCollision(collider1, actor1, collider2, actor2);
 
-						if (hit.minimum_allowed_distance>0.f)
+
+						if (hit.minimum_allowed_distance > 0.f)
 						{
 							if (collider1->isTrigger || collider2->isTrigger)
 							{
+								// Eventos sin fisica
 								actor1->OnTrigger(actor2);
 								actor2->OnTrigger(actor1);
 							}
 							else
 							{
-								MoveActors(actor1, actor2, hit.col_p2-hit.col_p1, hit.minimum_allowed_distance, hit.current_distance);
+								// Resolver solapamiento moviendo actores
+								MoveActors(actor1, actor2, hit.col_p2 - hit.col_p1, hit.minimum_allowed_distance, hit.current_distance);
+
+								// Notifa colision fisica
 								actor1->OnHit(actor2);
 								actor2->OnHit(actor1);
 							}
@@ -52,9 +57,10 @@ void MyPhysics::Update()
 
 void MyPhysics::MoveActors(Actor* actor1, Actor* actor2, Vector2 current_a1_to_a2, float minimum_distance, float current_distance)
 {
+	// Reparto del empuje segun masa
 	float total_mass = actor1->mass + actor2->mass;
-	float factor1; 
-	float factor2; 
+	float factor1;
+	float factor2;
 	if (actor2->isStatic)
 	{
 		factor1 = 1.f;
@@ -65,8 +71,11 @@ void MyPhysics::MoveActors(Actor* actor1, Actor* actor2, Vector2 current_a1_to_a
 		factor1 = actor2->mass / total_mass;
 		factor2 = actor1->mass / total_mass;
 	}
+
+	// Cantidad de solapamiento
 	float overlapping = minimum_distance - current_distance;
 
+	// Separar actores en direcciones opuestas
 	actor1->transform.position -= (current_a1_to_a2 / current_distance) * overlapping * factor1;
 	actor2->transform.position += (current_a1_to_a2 / current_distance) * overlapping * factor2;
 }
@@ -109,9 +118,15 @@ MyPhysics::HIT_INFO MyPhysics::IsCollidingCircleRectangle(Collider* col1, Actor*
 MyPhysics::HIT_INFO MyPhysics::IsCollidingCircleCircle(Collider* col1, Actor* a1, Collider* col2, Actor* a2)
 {
 	HIT_INFO hit;
+
+	// Posiciones absolutas de los centros
 	hit.col_p1 = col1->relative_position.rotate(a1->transform.rotation) + a1->transform.position;
 	hit.col_p2 = col2->relative_position.rotate(a2->transform.rotation) + a2->transform.position;
+
+	// Distancia real entre centros
 	Vector2 col1_to_col2 = hit.col_p2 - hit.col_p1;
+
+	// Distancia minima permitida
 	hit.current_distance = col1_to_col2.Module();
 	hit.minimum_allowed_distance = ((CircleCollider*)col1)->radius + ((CircleCollider*)col2)->radius;
 
@@ -124,7 +139,7 @@ MyPhysics::HIT_INFO MyPhysics::IsCollidingCircleCircle(Collider* col1, Actor* a1
 
 MyPhysics::HIT_INFO MyPhysics::IsCollidingRectangleRectangle(Collider* col1, Actor* a1, Collider* col2, Actor* a2)
 {
-	RectangleCollider *rc1 = (RectangleCollider*)col1;
+	RectangleCollider* rc1 = (RectangleCollider*)col1;
 	RectangleCollider* rc2 = (RectangleCollider*)col2;
 
 	Vector2 pmin1 = a1->transform.position + rc1->relative_position - rc1->size * 0.5f;
@@ -144,7 +159,7 @@ MyPhysics::HIT_INFO MyPhysics::IsCollidingRectangleRectangle(Collider* col1, Act
 		hit.col_p2 = a2->transform.position + rc2->relative_position;
 		hit.current_distance = (hit.col_p1 - hit.col_p2).Module();
 		Vector2 colDir = (hit.col_p1 - hit.col_p2).Normalized();
-		
+
 		float minimumDistanceX, minimumDistanceY;
 		if (std::abs(colDir.x) > std::abs(colDir.y))
 		{
@@ -162,6 +177,7 @@ MyPhysics::HIT_INFO MyPhysics::IsCollidingRectangleRectangle(Collider* col1, Act
 	return hit;
 }
 
+// Elimina todos los colliders de un actor
 void MyPhysics::RemoveActor(Actor* act)
 {
 	auto it = colliders_by_actor.find(act);
@@ -171,11 +187,11 @@ void MyPhysics::RemoveActor(Actor* act)
 			delete collider;
 		delete it->second;
 
-		colliders_by_actor.erase(it);	
+		colliders_by_actor.erase(it);
 	}
 }
 
-
+// Añade un collider al actor
 void MyPhysics::AddCollider(Collider* col, Actor* act)
 {
 	auto it = colliders_by_actor.find(act);
@@ -190,6 +206,7 @@ void MyPhysics::AddCollider(Collider* col, Actor* act)
 	}
 }
 
+// Elimina todos los colliders del mapa estatico
 void MyPhysics::RemoveMapColliders(Actor* mapActor)
 {
 	auto it = colliders_by_actor.find(mapActor);

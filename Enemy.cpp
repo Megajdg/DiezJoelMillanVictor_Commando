@@ -281,7 +281,7 @@ void Enemy::TakeDamage(int dmg)
     health -= dmg;
     if (health <= 0)
     {
-        AudioManager::instance().playSFX("hit.wav");
+        AudioManager::instance().PlaySFX("hit.wav");
         ((GameScene*)myScene)->AddScore(100);
         isDead = true;
         dying = true;
